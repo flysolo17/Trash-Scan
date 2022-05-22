@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_registration"
+    app:startDestination="@id/getUserPhoneFragment">
+
+    <fragment
+        android:id="@+id/getUserPhoneFragment"
+        android:name="com.example.trash_scan.registration.registrationprocess.GetUserPhoneFragment"
+        android:label="fragment_get_user_phone"
+        tools:layout="@layout/fragment_get_user_phone" >
+        <action
+            android:id="@+id/action_getUserPhoneFragment_to_userPhoneVerificationFragment"
+            app:destination="@id/userPhoneVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userPhoneVerificationFragment"
+        android:name="com.example.trash_scan.registration.registrationprocess.UserPhoneVerificationFragment"
+        android:label="fragment_user_phone_verification"
+        tools:layout="@layout/fragment_user_phone_verification" >
+        <action
+            android:id="@+id/action_userPhoneVerificationFragment_to_getUserPhoneFragment"
+            app:destination="@id/getUserPhoneFragment" />
+        <action
+            android:id="@+id/action_userPhoneVerificationFragment_to_createUserAccountFragment"
+            app:destination="@id/createUserAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createUserAccountFragment"
+        android:name="com.example.trash_scan.registration.registrationprocess.CreateUserAccountFragment"
+        android:label="fragment_create_user_account"
+        tools:layout="@layout/fragment_create_user_account" >
+        <action
+            android:id="@+id/action_createUserAccountFragment_to_getUserPhoneFragment"
+            app:destination="@id/getUserPhoneFragment" />
+    </fragment>
+</navigation>

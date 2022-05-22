@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bar_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.trash_scan.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_junkShopsFragment"
+            app:destination="@id/junkShopsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.example.trash_scan.fragments.ContactUsFragment"
+        android:label="Contacts"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.trash_scan.fragments.FaqFragment"
+        android:label="FAQ"
+        tools:layout="@layout/fragment_faq" />
+
+    <dialog
+        android:id="@+id/nav_logout"
+        android:name="com.example.trash_scan.fragments.LogOutDialog"
+        android:label="fragment_log_out_dialog"
+        tools:layout="@layout/fragment_log_out_dialog" />
+    <fragment
+        android:id="@+id/junkShopsFragment"
+        android:name="com.example.trash_scan.fragments.JunkShopsFragment"
+        android:label="Junk Shops"
+        tools:layout="@layout/fragment_junk_shops" />
+
+
+</navigation>

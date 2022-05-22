@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.trash_scan">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".firebase.FirebaseOffline"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TrashScan">
+        <activity
+            android:name=".appfeatures.tips"
+            android:theme="@style/Theme.TrashScan.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".registration.RegistrationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_registration"
+            android:theme="@style/Theme.TrashScan.NoActionBar" />
+        <activity
+            android:name=".junkshop.JunkshopOwner"
+            android:exported="false" />
+        <activity
+            android:name=".garbage_collector"
+
+            android:exported="false" />
+        <activity android:name=".violation.ViolationBodyActivity"
+            android:theme="@style/Theme.TrashScan.NoActionBar"/>
+        <activity android:name=".appfeatures.Violation"
+            android:theme="@style/Theme.TrashScan.NoActionBar"/>
+        <activity android:name=".appfeatures.TrackLocation"
+            android:theme="@style/Theme.TrashScan.NoActionBar"/>
+        <activity
+            android:name=".appfeatures.TrashActivity"
+            android:theme="@style/Theme.TrashScan.NoActionBar"
+            android:exported="true" />
+        <activity
+            android:name=".registration.Login"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+    </application>
+
+</manifest>

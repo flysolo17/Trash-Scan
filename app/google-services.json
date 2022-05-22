@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "426522957243",
+    "project_id": "ucu-project-7d785",
+    "storage_bucket": "ucu-project-7d785.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426522957243:android:33b483f841238641ffe09e",
+        "android_client_info": {
+          "package_name": "com.ketchupzzz.trashscanv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426522957243-57rrgi8jlc8cms148n09ebk0et0k8abn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ketchupzzz.trashscanv1",
+            "certificate_hash": "c72ecd56e587f350c8f5547580d877c27c82557c"
+          }
+        },
+        {
+          "client_id": "426522957243-tm78mtlor2llndkr4pi4sd7kkm2ncj2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQrNGHO_xsR5yRagmrl3frZ66XW8IYI6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426522957243-tm78mtlor2llndkr4pi4sd7kkm2ncj2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

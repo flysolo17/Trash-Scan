@@ -1,0 +1,140 @@
+<resources>
+    <string name="app_name">Trash-Scan</string>
+    <string name="login">Login</string>
+    <string name="already_registered">Already Registered</string>
+    <string name="register">Register</string>
+    <string name="phone">Phone</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="fullname">Full Name</string>
+    <string name="not_registered">Not Regesitered?</string>
+    <string name="nav_header_desc">Nav Header Desc</string>
+    <string name="open" />
+    <string name="close" />
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="settings">Settings</string>
+    <string name="log_out">Log Out</string>
+    <string name="trash_scan">TRASH SCAN</string>
+    <string name="by_jewel_joyce_ramos">by Jewel Joyce Ramos</string>
+    <string name="header">header</string>
+    <string name="trash">Trash</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="save">Save</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name (optional)</string>
+    <string name="next">NEXT</string>
+    <string name="last_name">Last Name</string>
+
+    <string name="back">Back</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="logo">Logo</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="create_home_owner_account">CREATE HOME OWNER ACCOUNT</string>
+    <string name="create_junkshop_account">CREATE JUNKSHOP ACCOUNT</string>
+    <string name="address">Address</string>
+    <string name="violation">Violation</string>
+    <string name="collection">Collection</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+
+
+    <string name="violation1">that provides for a systematic, comprehensive and ecological
+        waste management program to ensure the protection of public health and the environment.
+        It mandates the bureau to provide secretariat support to the National Solid Waste Management
+        Commission in the implementation of the solid waste management plans and prescribes policies
+        to achieve the objectives of the National Ecology Center that is in charge of information dissemination,
+        consultation, education and training of various local government units on ecological waste management.
+        The ecological solid waste management program is expected to assist Local Government Units in implementing RA 9003
+        or the Ecological Solid Waste Management Act particularly in the development of their 10 yr. SWM Plan, closure and
+        rehabilitation of dumpsites, establishment of Materials Recovery Facilities, and an environmentally sound disposal system.
+        Under R.A. 9003, violation of said provision is punishable with imprisonment from one day to three years, or fines from P300 to
+        as much as P500,000. With such stiff penalties, the DENR chief believes that collectors will be encouraged to implement ecological
+        waste management and dispose of their collected garbage properly. “At the same time, this will also compel those who still do not
+        segregate their own wastes to do so</string>
+
+    <string name="violation2">
+        <b>Section 2. Declaration of Policy</b><br />
+        Consistent with the policy of the State to protect and advance the right of the people to a balanced and healthful ecology in accord with the rhythm and harmony of nature, and in recognition of the vital role of the youth in nation building and the role of education to foster patriotism and nationalism, accelerate social progress, and promote total human liberation and development, the state shall promote national awareness on the role of natural resources in economic growth and the importance of environmental conservation and ecological balance towards sustained national development.<br />
+        <b>Section 4. Environmental Education and Activities as Part of National Service Training Program</b><br />
+        The CHED and the TESDA shall include environmental education and awareness programs and activities in the National Service Training Program under Republic Act No. 9163, as part of the Civic Welfare Training Service component required for all baccalaureate degree courses and vocational courses with a curriculum of at least two (2) years.<br />
+        <b>Section 5. Declaration of Environmental Awareness Month</b><br />
+        Pursuant to the policy set forth in this Act, the month of November of every year shall be known as the "Environmental Awareness Month" throughout the
+    </string>
+
+    <string name="violation3">Section 45. Violation of Standards for Stationary Sources
+        For actual exceedance of any pollution or air quality standards under this Act
+        or its rules and regulations, the Department, through the Pollution Adjudication Board (PAB)
+        , shall impose a fine of not more than One hundred thousand pesos (P100,000.00) for every day
+        of violation against the owner or operator of a stationary source until such time that the
+        standards have been complied with.
+        For purposes of the application of the fines, the PAB shall prepare a fine
+        rating system to adjust the maximum fine based on the violator\s ability to pay, degree of willfulness,
+        degree of negligence, history of non-compliance and degree of recalcitrance: Provided, That in case of
+        negligence, the first time offender\s ability to pay may likewise be considered by the Pollution
+        Adjudication Board: Provided, Further, That in the absence of any extenuating or aggravating circumstances,
+        the amount of fine for negligence shall be equivalent to one-half of the fine for willful violation.
+        The fines herein prescribed shall be increased by at least ten percent (10%), every three (3) years to
+        compensate for inflation and to maintain the deterrent function of such fines.
+        In addition to the fines, the PAB shall order closure, suspension of development,
+        construction, or operations of the stationary sources until such time that proper
+        environmental safeguards are put in place: Provided, That an establishment liable for a
+        third offense shall suffer permanent closure immediately. This paragraph shall be without prejudice
+        to the immediate issuance of an ex parte order for such closure, suspension of development or construction, or cessation of operations during the pendency of the case upon prima facie evidence that their is imminent threat to life, public health, safety or general welfare, or to plant or animal life, or whenever there is an exceedance of the emission standards set by the Department and/or the Board and/or the appropriate LGU.<br />
+        Section 47. Fines and Penalties for Violations of Other Provisions in the Act
+        For violations of all other provisions provided in this Act and of the rules and regulations thereof,
+        a fine of not less than Ten thousand pesos (P10,000) but not more than One Hundred thousand Pesos (P100,000)
+        or six (6) months to six (6) years imprisonment or both shall be imposed. If the offender is a juridical person,
+        the president, manager, directors, trustees, the pollution control officer or the officials directly in charge of the operations shall suffer the penalty herein
+    </string>
+    <string name="violation4"><b>SECTION 28. Fines, Damages and Penalties</b><br />
+         Unless otherwise provided herein, any person who commits any of the prohibited acts provided in the immediately preceding section or violates any of the provision of this Act or its implementing rules and regulations, shall be fined by the Secretary, upon the recommendation of the PAB in the amount of not less than Ten thousand pesos (P10,000.00) nor more than Two hundred thousand pesos (P200,000.00) for every day of violation. The fines herein prescribed shall be increased by ten percent (10%) every two (2) years to compensate for inflation and to maintain the deterrent function of such fines: Provided, That the Secretary, upon recommendation of the PAB may order the closure, suspension of development or construction, or cessation of operations or, where appropriate disconnection of water supply, until such time that proper environmental safeguards are put in place and/or compliance with this Act or its rules and regulations are undertaken. This paragraph shall be without prejudice to the issuance of an ex parte order for such closure, suspension of development or construction, or cessation of operations during the pendency of the case.<br />
+        Failure to undertake clean-up operations, willfully, or through gross negligence, shall be punished by imprisonment of not less than two (2) years and not more than four (4) years and a fine not less than Fifty thousand pesos (P50,000.00) and not more than One hundred thousand pesos (P100,000.00) per day for each day of violation. Such failure or refusal which results in serious injury or loss of life and/or irreversible water contamination of surface, ground, coastal and marine water shall be punished with imprisonment of not less than six (6) years and one day and not more than twelve (12) years, and a fine of Five Hundred Thousand Pesos (P500,000.00) per day for each day during which the omission and/or contamination continues.<br />
+        In case of gross violation of this Act, the PAB shall issue a resolution recommending that the proper government agencies file criminal charges against the violators. Gross violation shall mean any of the following:<br />
+        a) deliberate discharge of toxic pollutants identified pursuant to Republic Act No.6969 in toxic amounts;<br />
+        b) five {5) or more violations within a period of two (2) years; or<br />
+        c) blatant disregard of the orders of the PAB, such as the non-payment of fines, breaking of seals or operating despite the existence of an order for closure, discontinuance or cessation of operation.<br />
+        In which case, offenders shall be punished with a fine of not less than Five hundred thousand pesos (P500,000.00) but not more than Three million pesos (P3,000,000.00} per day for each day of violation or imprisonment of not less than six {6) years but not more than ten {10) years, or both, at the discretion of the court. If the offender is a juridical person, the president, manager and the pollution control officer or the official in charge of the operation shall suffer the penalty herein provided.<br />
+        For violations falling under Section 4 of Presidential Decree No.979 or any regulations prescribed in pursuance thereof, such person shall be liable for a fine of no1 less than Fifty thousand pesos {P50,000.00) nor more than One million pesos (P1,000,000.00) or by imprisonment of not less than one {1) year nor more than six (6) years or both, for each offense, without prejudice to the civil liability of the offender in accordance with existing laws. If the offender is a juridical entity, then its officers, directors, agents or any person primarily responsible shall be held liable: Provided, That any vessel from which oil or other harmful substances are discharged in violation of Section 4 of Presidential Decree No.979 shall be liable for penalty of fine specified in the immediately preceding paragraph and clearance of such vessel from the port of the Philippines may be withheld until the fine is paid and such penalty shall constitute a lien on such vessel which may be recovered in proceedings by libel in rem in the proper court which the vessel may be. The owner or operator of a vessel or facility which discharged the oil or other harmful substances will be liable to pay for any clean-up costs.<br />
+        Provided, finally, That water pollution cases involving acts or omissions --- committed within the Laguna Lake Region shall be dealt with in accordance with the procedure under R. A. No.4850 as amended.
+    </string>
+    <string name="violation5"><b>Section 9. Penalty for Violation</b><br />
+        Any person, corporation or partnership found violating Section 4 of this Decree, or the terms and conditions in the issuance of the Environmental Compliance Certificate, or of the standards, rules and regulations issued by the National Environmental Protection Council pursuant to this Decree shall be punished by the suspension or cancellation of his/its certificate or and/or a fine in an amount not to exceed Fifty Thousand Pesos (P50,000.00) for every violation thereof, at the discretion of the National Environmental Protection Council.
+    </string>
+    <string name="violation6"><b>Section 10. Penalties</b><br />
+        Any person who shall violate any of the provisions of Section nine of this Act or who violates any order of the Commission, shall be liable to a penalty of not to exceed fifty pesos for each day during which the violation continues, or by imprisonment of from two years to six years, or by both fine and imprisonment and in addition such person may be required or enjoined from continuing such violation as hereinafter provided.<br />
+        Any person who violates any of the provisions of, or fails to perform any duty imposed by this Act, or who violates and order or other determination of the Commission promulgated pursuant to this Act, thereby causing the death of fish or other aquatic life, or damages or destroys the natural habitat necessary for the propagation of fish or other aquatic life, shall in addition to the penalty above prescribed, be liable to pay the government for damages for fish or other aquatic life destroyed. The Commission after consultation with fishery officials of the Department of Agriculture and Natural Resources shall, through a court of competent jurisdiction, bring an action against such person and recover the reasonable value of the fish or other aquatic life and/or habitat destroyed by such pollution. Any amount so recovered shall be placed in the funds made available to the Fisheries Commission.
+    </string>
+    <string name="violation7"><b>Section 10. Penalties</b><br />
+        Any person who shall violate any of the provisions of Section nine of this Act or who violates any order of the Commission, shall be liable to a penalty of not to exceed fifty pesos for each day during which the violation continues, or by imprisonment of from two years to six years, or by both fine and imprisonment and in addition such person may be required or enjoined from continuing such violation as hereinafter provided.<br />
+        Any person who violates any of the provisions of, or fails to perform any duty imposed by this Act, or who violates and order or other determination of the Commission promulgated pursuant to this Act, thereby causing the death of fish or other aquatic life, or damages or destroys the natural habitat necessary for the propagation of fish or other aquatic life, shall in addition to the penalty above prescribed, be liable to pay the government for damages for fish or other aquatic life destroyed. The Commission after consultation with fishery officials of the Department of Agriculture and Natural Resources shall, through a court of competent jurisdiction, bring an action against such person and recover the reasonable value of the fish or other aquatic life and/or habitat destroyed by such pollution. Any amount so recovered shall be placed in the funds made available to the Fisheries Commission.
+    </string>
+
+    <string name="confirm">Confirm</string>
+    <string name="resend">Resend</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="otp_verification">OTP Verification</string>
+
+    <string name="by_tapping_next_we_will_collect_your_mobile_phone_number_to_be_able_to_send_you_a_one_time_password_otp">By tapping next, we will collect your mobile phone number to be able to send you a one time password (OTP).</string>
+    <string name="junk_shop_owner">Junk shop owner</string>
+    <string name="home_owner">home owner</string>
+    <string name="loading">Loading...</string>
+    <string name="user_name">User Name</string>
+    <string name="proccessing">Proccessing....</string>
+    <string name="jewel_is_now_collecting_in_urdaneta_please_prepare_your_bins">Jewel is now collecting in Urdaneta please prepare your bins.</string>
+    <string name="tips">Tips</string>
+    <string name="didyouknow">Did You Know?</string>
+    <string name="junkshops">JunkShops</string>
+</resources>

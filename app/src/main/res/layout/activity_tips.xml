@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".appfeatures.tips">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:textSize="25dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Plastic By Numbers"/>
+    <ImageView
+    android:layout_marginTop="10dp"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:src="@drawable/number"
+        />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="PETE - Polyethylene Terephthalate"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Common uses: Drink and water bottles, food jars, cooking oil"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Products made of #1 (PET) plastic should be recycled but not reused(Widely recyclable)."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="HDPE - High-Density Polyethylene"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+           android:text="Common uses: Milk jugs, shampoo bottles, grocery bags."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="15dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="sans-serif"
+        android:text="These are heavier containers that can be recycled into toys and piping. PETE/PET and HDPE are usually accepted at recycling centers."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="PVC or V - Poly(vinyl chloride)"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Common uses: pipe, food containers and shrink wrap"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Items made of No. 3 plastics are difficult to recycle, and likely will not be accepted at your local recycling center."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="LDPE - Low-Density Polyethylene"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Common uses: Dry cleaning bags, shopping bags, garbage bags, paper milk container coating"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Even though these plastics are generally considered safe, most recycling centers will not accept them."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text=" PP - Polypropylene"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Common uses: dishwasher safe cups and bowls, baby bottles, ketchup bottles, syrup bottles, yogurt tubs and diapers"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Sometimes recyclable. You’ll need to check with your community."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text=" PS - Polystyrene"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Common uses: Cups, plates, takeout containers"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Researchers have noted that No. 6 plastic has a tendency to leach into the environment, and should be not heated. It is not recyclable and should be avoided."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text=" Other (BPA, Polycarbonate and LEXAN)"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Common uses: Reusable water jugs, oven-baking bags and often contain a combination of plastics 1-6."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="sans-serif"
+            android:text="You can return these items to the manufacturer so that you don't add more items to the landfills. This also puts the burden back on the makers to recycle or dispose of the items properly. Also, because you never know what's in it, avoid giving children cups made with No. 7 plastics, and do not use it to microwave food."/>
+
+
+
+    </LinearLayout>
+</ScrollView>
