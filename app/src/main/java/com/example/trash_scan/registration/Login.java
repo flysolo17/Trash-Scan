@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.trash_scan.VerificationDialog;
 import com.example.trash_scan.junkshop.JunkshopOwner;
 import com.example.trash_scan.MainActivity;
 import com.example.trash_scan.ProgressDialog;
@@ -31,14 +32,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Objects;
 
 public class Login extends AppCompatActivity{
-
+    public static String userID = "";
     private FirebaseAuth firebaseAuth;
     private Validation validation;
     private Button button_login;
     private TextInputLayout input_email,input_password;
     private TextView text_create_account;
     private FirebaseFirestore firestore;
-    private String userType;
+    public static String userType;
     private ProgressDialog progressDialog = new ProgressDialog(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,7 +134,7 @@ public class Login extends AppCompatActivity{
                                 }
                                 if (userType.equals("junk shop owner")){
                                     //intent your junk shop owner interface here
-                                    Intent intent = new Intent(getApplicationContext(), JunkshopOwner.class);
+                                    Intent intent = new Intent(getApplicationContext(), JunkshopOwner.class).putExtra(User.ARG_USER_ID,userID);
                                     startActivity(intent);
                                     progressDialog.stopLoading();
                                 }
@@ -148,36 +149,26 @@ public class Login extends AppCompatActivity{
     }
     private static final String TAG = ".Login";
 
-    //this feature is under maintainance
-/*    private void loginWithPhone(String input,String password){
-        firestore.collection(User.TABLE_NAME)
-                .whereEqualTo(User.ARG_PHONE,input)
-                .get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()){
-                String email = "";
-                for (DocumentSnapshot documentSnapshot : task.getResult()){
-                    if (documentSnapshot.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + documentSnapshot.getData());
-                        email = documentSnapshot.getString(User.ARG_EMAIL);
-                        loginUser(email,password);
-                    } else {
-                        Log.d(TAG, "No such document");
-                        Toast.makeText(getApplicationContext(),"User not found",Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-            }
-        });
-    }*/
-
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+       checkIfUserVerified(currentUser);
+    }
+    private void checkIfUserVerified(FirebaseUser currentUser) {
         if (currentUser != null){
-            if (currentUser.getEmail() != null){
+            VerificationDialog verificationDialog = new VerificationDialog();
+            if (currentUser.isEmailVerified()) {
+                if (verificationDialog.isAdded()) {
+                    verificationDialog.dismiss();
+                }
                 updateUI(currentUser.getEmail());
+            } else {
+                if (!verificationDialog.isAdded()) {
+                    verificationDialog.show(getSupportFragmentManager(),"Verification");
+                }
             }
         }
     }
+
 }

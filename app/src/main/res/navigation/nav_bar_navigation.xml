@@ -13,6 +13,7 @@
         <action
             android:id="@+id/action_nav_home_to_junkShopsFragment"
             app:destination="@id/junkShopsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/nav_contact"
@@ -32,9 +33,45 @@
         tools:layout="@layout/fragment_log_out_dialog" />
     <fragment
         android:id="@+id/junkShopsFragment"
-        android:name="com.example.trash_scan.fragments.JunkShopsFragment"
-        android:label="Junk Shops"
-        tools:layout="@layout/fragment_junk_shops" />
-
+        android:name="com.example.trash_scan.fragments.ChatsFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_chats" >
+        <action
+            android:id="@+id/action_junkShopsFragment_to_junkShopProfile"
+            app:destination="@id/junkShopProfile" />
+        <action
+            android:id="@+id/action_junkShopsFragment_to_messagingFragment"
+            app:destination="@id/messagingFragment" />
+        <action
+            android:id="@+id/action_junkShopsFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagingFragment"
+        android:name="com.example.trash_scan.messaging.MessagingFragment"
+        android:label="fragment_messaging"
+        tools:layout="@layout/fragment_messaging" >
+        <action
+            android:id="@+id/action_messagingFragment_to_viewJunkShopProfile"
+            app:destination="@id/viewJunkShopProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.trash_scan.fragments.UsersFragment"
+        android:label="Junk Shop Owners"
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_usersFragment_to_messagingFragment"
+            app:destination="@id/messagingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewJunkShopProfile"
+        android:name="com.example.trash_scan.appfeatures.ViewJunkShopProfile"
+        android:label="Junkshop Profile"
+        tools:layout="@layout/fragment_view_junk_shop_profile" >
+        <action
+            android:id="@+id/action_viewJunkShopProfile_to_messagingFragment"
+            app:destination="@id/messagingFragment" />
+    </fragment>
 
 </navigation>

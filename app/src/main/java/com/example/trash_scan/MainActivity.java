@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -17,15 +18,15 @@ import com.example.trash_scan.databinding.ActivityMainBinding;
 import com.example.trash_scan.firebase.models.User;
 import com.example.trash_scan.fragments.LogOutDialog;
 import com.example.trash_scan.registration.Login;
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends AppCompatActivity  implements LogOutDialog.LogOutFeedBack {
     private AppBarConfiguration mAppBarConfiguration;
     public static String userID;
     private ActivityMainBinding binding;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity  implements LogOutDialog.Log
         setContentView(binding.getRoot());
         userID = getIntent().getStringExtra(User.ARG_USER_ID);
         //set nav bar
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
 
@@ -63,5 +64,10 @@ public class MainActivity extends AppCompatActivity  implements LogOutDialog.Log
             startActivity(new Intent(MainActivity.this, Login.class));
         }
     }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
+
 
 }

@@ -137,4 +137,33 @@
     <string name="tips">Tips</string>
     <string name="didyouknow">Did You Know?</string>
     <string name="junkshops">JunkShops</string>
+    <string name="items">Items</string>
+    <string name="_0">0</string>
+    <string name="following">Following</string>
+    <string name="chat">Chat</string>
+    <string name="location">Location</string>
+    <string name="your_message">Your Message</string>
+    <string name="recieved_message">Recieved Message</string>
+    <string name="timestamp">timestamp</string>
+    <string name="chats">Chats</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="no_messages">No Messages</string>
+    <string name="current_message">Current Message</string>
+    <string name="gallery">gallery</string>
+    <string name="lastname">Lastname</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="describe_your_experience_optional">Describe your experience (optional)</string>
+    <string name="description">Description</string>
+    <string name="ratings_and_reviews">Ratings and Reviews</string>
+    <string name="ratings">Ratings</string>
+    <string name="item_name">Item name</string>
+    <string name="short_information_about_the_item">Short information about the item</string>
+    <string name="add_item">Add item</string>
+    <string name="add_recycable">Add Recycable</string>
+    <string name="price">Price</string>
+    <string name="recycable_item_name">Recycable Item name</string>
+    <string name="recycables">Recycables</string>
+    <string name="violations">Violations</string>
+
+
 </resources>

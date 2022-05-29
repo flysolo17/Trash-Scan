@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card5"
+    android:layout_margin="20dp"
+    tools:context=".VerificationDialog">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify Your Account"
+            android:layout_margin="10dp"
+            style="@style/TextAppearance.MaterialComponents.Headline6"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/verify"/>
+
+        <Button
+            android:id="@+id/buttonVerifyNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4CAF50"
+            android:text="Verify Now"
+            android:textColor="@color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center"
+            android:text="You hava to sign in again after you verify your account!"
+            android:id="@+id/textEmailVerified"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/log_out"
+            android:textColor="@color/black"
+            android:id="@+id/buttonLogout"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"/>
+    </LinearLayout>
+
+</FrameLayout>

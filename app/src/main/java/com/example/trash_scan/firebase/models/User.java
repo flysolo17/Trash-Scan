@@ -1,6 +1,11 @@
 package com.example.trash_scan.firebase.models;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.List;
+
 public class User {
     public static final String TABLE_NAME = "Users";
     public static final String ARG_USER_TYPE = "userType";
@@ -11,20 +16,25 @@ public class User {
     public static final String ARG_EMAIL = "userEmail";
     public static final String ARG_USER_ID = "userID";
     public static final String USER_PHONE_NUMBER = "userPhoneNumber";
-    String userID,userFirstName,userLastName,userAddress,userEmail,userPhoneNumber,userType;
+    String userID,userProfile,userFirstName,userLastName,userAddress,userEmail,userPhoneNumber,userType;
+
 
     public User() {
     }
 
-    public User(String userID, String userFirstName, String userLastName, String userAddress, String userEmail, String userPhoneNumber, String userType) {
+    public User(String userID,String userProfile,String userFirstName, String userLastName, String userAddress, String userEmail, String userPhoneNumber, String userType) {
         this.userID = userID;
+        this.userProfile = userProfile;
         this.userFirstName = userFirstName;
         this.userLastName = userLastName;
         this.userAddress = userAddress;
         this.userEmail = userEmail;
         this.userPhoneNumber = userPhoneNumber;
         this.userType = userType;
+
     }
+
+
 
     public String getUserID() {
         return userID;
@@ -80,5 +90,12 @@ public class User {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+    public String getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(String userProfile) {
+        this.userProfile = userProfile;
     }
 }

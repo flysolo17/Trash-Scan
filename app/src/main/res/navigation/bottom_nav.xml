@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.trash_scan.junkshop.bottomnav.JunkShopHome"
+        android:label="fragment_junk_shop_home"
+        tools:layout="@layout/fragment_junk_shop_home" >
+        <action
+            android:id="@+id/action_nav_home_to_addRecycableFragment"
+            app:destination="@id/addRecycableFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.trash_scan.junkshop.bottomnav.JunkShopProfile"
+        android:label="fragment_junk_shop_profile"
+        tools:layout="@layout/fragment_junk_shop_profile" >
+        <action
+            android:id="@+id/action_nav_profile_to_updateProfile"
+            app:destination="@id/updateProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_messages"
+        android:name="com.example.trash_scan.junkshop.bottomnav.JunkShopMessages"
+        android:label="fragment_junk_shop_messages"
+        tools:layout="@layout/fragment_junk_shop_messages" >
+        <action
+            android:id="@+id/action_nav_messages_to_junkShopReply"
+            app:destination="@id/junkShopReply" />
+    </fragment>
+    <fragment
+        android:id="@+id/junkShopReply"
+        android:name="com.example.trash_scan.junkshop.JunkShopReply"
+        android:label="fragment_junk_shop_reply"
+        tools:layout="@layout/fragment_junk_shop_reply" >
+        <action
+            android:id="@+id/action_junkShopReply_to_nav_messages"
+            app:destination="@id/nav_messages" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfile"
+        android:name="com.example.trash_scan.appfeatures.UpdateProfile"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" >
+        <action
+            android:id="@+id/action_updateProfile_to_nav_profile"
+            app:destination="@id/nav_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRecycableFragment"
+        android:name="com.example.trash_scan.junkshop.AddRecycableFragment"
+        android:label="fragment_add_recycable"
+        tools:layout="@layout/fragment_add_recycable" >
+        <action
+            android:id="@+id/action_addRecycableFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+</navigation>

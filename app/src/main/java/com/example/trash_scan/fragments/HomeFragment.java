@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -24,15 +25,16 @@ import com.example.trash_scan.databinding.FragmentHomeBinding;
 import com.example.trash_scan.firebase.models.Destinations;
 import com.example.trash_scan.firebase.models.User;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
-    private String userFirstname = null;
     private FirebaseFirestore firestore;
     private DestinationAdapter destinationAdapter;
     @Override
@@ -49,13 +51,12 @@ public class HomeFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         destinationAdapter = new DestinationAdapter(getAllDestinations());
         binding.cardViewTrash.setOnClickListener(v -> startActivity(new Intent(getActivity(), TrashActivity.class)));
-        binding.cardViewTrack.setOnClickListener(v -> startActivity(new Intent(getActivity(), TrackLocation.class)));
+
         binding.cardViewNotif.setOnClickListener(v -> startActivity(new Intent(getActivity(), tips.class)));
         binding.cardViewViolation.setOnClickListener(v -> startActivity(new Intent(getActivity(), Violation.class)));
-        binding.userFirstName.setOnClickListener(v -> {
-            Toast.makeText(requireContext(),MainActivity.userID,Toast.LENGTH_LONG).show();
-        });
+
         binding.cardJunkshops.setOnClickListener(v -> {
+
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_nav_home_to_junkShopsFragment);
         });
         binding.recyclerviewDestinations.setLayoutManager(new LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false));
@@ -66,13 +67,14 @@ public class HomeFragment extends Fragment {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
-                    userFirstname = document.getString(User.ARG_FIRST_NAME);
-                } else {
-                    userFirstname = "No Name";
+                    User user = document.toObject(User.class);
+                    if (!user.getUserProfile().isEmpty()) {
+                        Picasso.get().load(user.getUserProfile()).into(binding.userProfile);
+                    }
+                    String fullname = user.getUserFirstName() + " " + user.getUserLastName();
+                    binding.userFullname.setText(fullname);
+                    binding.userEmail.setText(user.getUserEmail());
                 }
-                binding.userFirstName.setText(userFirstname);
-            } else {
-                userFirstname = "No Name";
             }
         });
     }

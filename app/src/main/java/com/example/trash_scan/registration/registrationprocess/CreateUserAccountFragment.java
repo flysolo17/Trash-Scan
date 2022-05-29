@@ -18,6 +18,7 @@ import com.example.trash_scan.R;
 import com.example.trash_scan.databinding.FragmentCreateUserAccountBinding;
 import com.example.trash_scan.firebase.models.User;
 import com.example.trash_scan.registration.Login;
+import com.example.trash_scan.registration.Validation;
 import com.example.trash_scan.registration.viewmodel.OtpSharedViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,21 +26,23 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 
 public class CreateUserAccountFragment extends Fragment {
 
-    private OtpSharedViewModel otpSharedViewModel;
+
     private FragmentCreateUserAccountBinding binding;
-    private String phone_number = "";
+
     private FirebaseFirestore firebaseFirestore;
     String userType = "home owner";
     ProgressDialog progressDialog;
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    private Validation validation;
+    private void init() {
+        validation = new Validation();
     }
 
     @Override
@@ -53,13 +56,9 @@ public class CreateUserAccountFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        init();
         progressDialog = new ProgressDialog(getActivity());
         firebaseFirestore = FirebaseFirestore.getInstance();
-        otpSharedViewModel = new ViewModelProvider(requireActivity()).get(OtpSharedViewModel.class); //Initialize OtpSharedViewModel
-        otpSharedViewModel.getPhoneNumber().observe(getViewLifecycleOwner(), phoneNumber -> {
-            //Get Phone number
-            phone_number = phoneNumber.toString();
-        });
         binding.toggleButtonGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
             if (isChecked) {
                 if (checkedId == R.id.buttonHomeOwner) {
@@ -75,52 +74,54 @@ public class CreateUserAccountFragment extends Fragment {
         });
 
         binding.buttonCreateAccount.setOnClickListener(v -> {
-            createAccount();
-
+            String firstname = binding.inputFirstName.getEditText().getText().toString();
+            String lastname = binding.inputLastName.getEditText().getText().toString();
+            String address = binding.inputAddress.getEditText().getText().toString();
+            String phone = binding.inputPhoneNumber.getEditText().getText().toString();
+            String email = binding.inputEmail.getEditText().getText().toString();
+            String password = binding.inputPassword.getEditText().getText().toString();
+            String confirmPassword = binding.inputConfirmPassword.getEditText().getText().toString();
+            if (firstname.isEmpty()) {
+                binding.inputFirstName.setError("Enter Firstname");
+            } else if (lastname.isEmpty()){
+                binding.inputLastName.setError("Enter Firstname");
+            } else if (!validation.validateEmail(binding.inputEmail) ||
+                    !validation.validatePhoneNumber(binding.inputPhoneNumber) ||
+                    !validation.validatePassword(binding.inputPassword) || !validation.validatePassword(binding.inputConfirmPassword)){
+                return;
+            } else if (!password.equals(confirmPassword)){
+                binding.inputConfirmPassword.setError("Password don't match");
+            } else {
+                createUserAccount(email,password,firstname,lastname,address,phone,userType,"");
+            }
         });
     }
 
-    private void createAccount(){
-        if (binding.inputFirstName.getEditText().getText().toString().isEmpty()){
-            binding.inputFirstName.setError("Input Firstname");
-        } else if (binding.inputLastName.getEditText().getText().toString().isEmpty()){
-            binding.inputLastName.setError("Input Lastname");
-        } else if (binding.inputAddress.getEditText().getText().toString().isEmpty()) {
-            binding.inputAddress.setError("Input Email");
-        }else if (binding.inputPassword.getEditText().getText().toString().length() < 8){
-            binding.inputPassword.setError("Password too short");
-        } else if (!binding.inputPassword.getEditText().getText().toString().equals(binding.inputConfirmPassword.getEditText().getText().toString())){
-            binding.inputConfirmPassword.setError("Password dont match");
-        } else {
+    private void createAccount(User user){
             progressDialog.isLoading();
-            User user = new User();
-            user.setUserID(firebaseFirestore.collection(User.TABLE_NAME).getId());
-            user.setUserFirstName(binding.inputFirstName.getEditText().getText().toString());
-            user.setUserLastName(binding.inputLastName.getEditText().getText().toString());
-            user.setUserAddress(binding.inputAddress.getEditText().getText().toString());
-            user.setUserEmail(binding.inputEmail.getEditText().getText().toString());
-            user.setUserPhoneNumber(phone_number);
-            user.setUserType(userType);
-
-            firebaseFirestore.collection(User.TABLE_NAME).document(firebaseFirestore.collection(User.TABLE_NAME).document().getId()).set(user)
+            firebaseFirestore.collection(User.TABLE_NAME).document(user.getUserID()).set(user)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Toast.makeText(requireContext(),"Account Created!",Toast.LENGTH_SHORT).show();
-                            progressDialog.stopLoading();
-                            createUserAccount(user.getUserEmail(),binding.inputPassword.getEditText().getText().toString());
+                            startActivity(new Intent(requireActivity(), Login.class));
+
                         } else {
                             Toast.makeText(requireContext(),"Create account failed!",Toast.LENGTH_SHORT).show();
-                            progressDialog.stopLoading();
                         }
+                        progressDialog.stopLoading();
                     });
-        }
     }
-    private void createUserAccount(String email,String password){
+    private void createUserAccount(String email,String password,String firstname,String lastname,String address,String phone_number,String userType,String profile){
         progressDialog.isLoading();
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
+                FirebaseUser currentUser = task.getResult().getUser();
+                if (currentUser != null) {
+                    User user = new User(currentUser.getUid(),profile,firstname,lastname,address,email,phone_number,userType);
+                    createAccount(user);
+                }
                 progressDialog.stopLoading();
-                startActivity(new Intent(requireActivity(), Login.class));
+
             } else {
                 progressDialog.stopLoading();
                 Toast.makeText(requireContext(),"Create user failed!",Toast.LENGTH_SHORT).show();
