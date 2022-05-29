@@ -1,2 +1,4 @@
 rootProject.name = "Trash-Scan"
+
 include ':app'
+

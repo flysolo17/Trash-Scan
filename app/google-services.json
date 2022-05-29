@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "426522957243",
-    "project_id": "ucu-project-7d785",
-    "storage_bucket": "ucu-project-7d785.appspot.com"
+    "project_number": "1070798817851",
+    "firebase_url": "https://trash-scan-53c2b-default-rtdb.firebaseio.com",
+    "project_id": "trash-scan-53c2b",
+    "storage_bucket": "trash-scan-53c2b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:426522957243:android:33b483f841238641ffe09e",
+        "mobilesdk_app_id": "1:1070798817851:android:68057c7a943f3a4a82aa1e",
         "android_client_info": {
-          "package_name": "com.ketchupzzz.trashscanv1"
+          "package_name": "com.example.trash_scan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "426522957243-57rrgi8jlc8cms148n09ebk0et0k8abn.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.ketchupzzz.trashscanv1",
-            "certificate_hash": "c72ecd56e587f350c8f5547580d877c27c82557c"
-          }
-        },
-        {
-          "client_id": "426522957243-tm78mtlor2llndkr4pi4sd7kkm2ncj2j.apps.googleusercontent.com",
+          "client_id": "1070798817851-0hvi3pdjp0tosec36quuc35hu3aggcr5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBQrNGHO_xsR5yRagmrl3frZ66XW8IYI6Y"
+          "current_key": "AIzaSyC5-L3pjx7-Fo_0p1zXdJpnPPvED2UxTOg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "426522957243-tm78mtlor2llndkr4pi4sd7kkm2ncj2j.apps.googleusercontent.com",
+              "client_id": "1070798817851-0hvi3pdjp0tosec36quuc35hu3aggcr5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
