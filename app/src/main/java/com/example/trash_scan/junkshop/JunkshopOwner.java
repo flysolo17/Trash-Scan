@@ -39,19 +39,7 @@ public class JunkshopOwner extends AppCompatActivity {
         binding = ActivityJunkshopOwnerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         init();
-/*        String userID = getIntent().getStringExtra(User.ARG_USER_ID);
-        if (userID != null) {
-            getUserInfo(userID);
-        }
-        binding.buttonLogout.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(this, Login.class));
-        });
 
-        binding.buttonMessages.setOnClickListener(view -> {
-            startActivity(new Intent(this,JunkShopOwnerMessages.class));
-        });*/
- ;
 
         setupNav();
 
@@ -59,25 +47,7 @@ public class JunkshopOwner extends AppCompatActivity {
 
 
     }
-/*    private void getUserInfo(String userID){
-        firestore.collection(User.TABLE_NAME).document(userID).get().addOnSuccessListener(documentSnapshot -> {
-           if (documentSnapshot.exists()) {
-               User user = documentSnapshot.toObject(User.class);
-               if (user != null) {
-                   bindViews(user);
-               }
-           }
-        });
-    }
 
-    private void bindViews(User user) {
-        if (!user.getUserProfile().isEmpty()) {
-            Picasso.get().load(user.getUserProfile()).into(binding.userProfile);
-        }
-        binding.textUserFullname.setText(user.getUserFirstName() + " " + user.getUserLastName());
-        binding.textCompleteAddress.setText(user.getUserAddress());
-
-    }*/
     private void setupNav() {
         navController = Navigation.findNavController(this,R.id.fragmentContainerView);
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController);

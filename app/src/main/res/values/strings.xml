@@ -164,6 +164,59 @@
     <string name="recycable_item_name">Recycable Item name</string>
     <string name="recycables">Recycables</string>
     <string name="violations">Violations</string>
+    <string name="verify_now">Verify Now</string>
+    <string name="profile">Profile</string>
+    <string name="terms">
+        Last updated: June 04, 2022 This Privacy Policy describes Our policies and procedures
+        on the collection, use and disclosure of Your information when You use the Service and
+        tells You about Your privacy rights and how the law protects You.
+        We use Your Personal data to provide and improve the Service. By using the Service,
+        you agree to the collection and use of information in accordance with this Privacy Policy.
+    </string>
+    <string name="barangay">Barangay</string>
+    <string name="city">City</string>
+    <string name="province">Province</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="urdaneta">Urdaneta</string>
+    <string name="save_address">Save Address</string>
 
+    <string-array name="barangays">
+        <item> Anonas</item>
+        <item>  Bactad East</item>
+        <item>  Bayaoas</item>
 
+        <item>  Bolaoen</item>
+        <item> Cabaruan</item>
+        <item>  Cabuloan</item>
+        <item> Camanang</item>
+        <item>  Camantiles</item>
+        <item>  Casantaan</item>
+        <item> Catablan</item>
+        <item>  Cayambanan</item>
+        <item>  Consolacion</item>
+        <item> Dilan-Paurido</item>
+        <item> Labit Proper</item>
+        <item>  Labit West</item>
+        <item>  Mabanogbog</item>
+        <item> Macalong</item>
+        <item>  Nancalobasaan</item>
+        <item>  Nancamaliran East</item>
+        <item>  Nancamaliran West</item>
+        <item> Nancayasan</item>
+        <item> Oltama</item>
+        <item> Palina East</item>
+        <item>  Palina West</item>
+        <item> Pedro T. Orata (Bactad Proper)</item>
+        <item> Pinmaludpod</item>
+        <item> Poblacion</item>
+        <item>  San Jose</item>
+        <item> San Vicente</item>
+        <item> Santa Lucia</item>
+        <item> Santo Domingo</item>
+        <item> Sugcong</item>
+        <item> Tiposu</item>
+        <item> Tulong</item>
+    </string-array>
+    
+    <string name="recycablelink">What do recycables become?<a href="https://www.peoriacounty.gov/1145/What-do-recyclables-become#:~:text=%20What%20Do%20Your%20Recyclables%20Become%20%201,to%20make%20new%20cans%20or%20foil.%20More%20">Click here!</a></string>
 </resources>

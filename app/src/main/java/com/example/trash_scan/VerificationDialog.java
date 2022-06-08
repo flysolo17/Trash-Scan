@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,12 +64,28 @@ public class VerificationDialog extends DialogFragment {
     private void sendVerification(FirebaseUser user) {
         user.sendEmailVerification().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                binding.textEmailVerified.setVisibility(View.VISIBLE);
+                verificationCodeCountDown();
                 Toast.makeText(binding.getRoot().getContext(), "Verification email sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
             } else  {
                 Toast.makeText(binding.getRoot().getContext(), "Failed to send verification email." + user.getEmail(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+    //Verification Countdown. (60 seconds)
+    private void verificationCodeCountDown(){
+        new CountDownTimer(60000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                binding.buttonVerifyNow.setText("" + millisUntilFinished / 1000);
+                binding.buttonVerifyNow.setEnabled(false); //Disable the button to prevent multiple clicks
+                binding.textEmailVerified.setVisibility(View.VISIBLE);
+            }
+            public void onFinish() {
+                binding.buttonVerifyNow.setText("Verify now");
+                binding.buttonVerifyNow.setEnabled(true); //Enable the button once the countdown is finish
+                binding.textEmailVerified.setVisibility(View.GONE);
+            }
+        }.start();
+    }
+
 
 }

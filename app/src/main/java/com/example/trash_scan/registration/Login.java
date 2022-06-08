@@ -1,12 +1,15 @@
 package com.example.trash_scan.registration;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
 
+import android.view.WindowManager;
 import android.widget.Button;
 
 import android.widget.TextView;
@@ -14,11 +17,14 @@ import android.widget.Toast;
 
 
 import com.example.trash_scan.VerificationDialog;
+import com.example.trash_scan.dialogs.AddressFragment;
+import com.example.trash_scan.dialogs.TermsAndConditions;
 import com.example.trash_scan.junkshop.JunkshopOwner;
 import com.example.trash_scan.MainActivity;
 import com.example.trash_scan.ProgressDialog;
 import com.example.trash_scan.R;
 import com.example.trash_scan.firebase.models.User;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +34,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
+import org.checkerframework.checker.units.qual.A;
 
 import java.util.Objects;
 
@@ -45,6 +53,7 @@ public class Login extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initViews();
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -60,7 +69,18 @@ public class Login extends AppCompatActivity{
 
         });
         text_create_account.setOnClickListener(v -> {
-            startActivity(new Intent(this,RegistrationActivity.class));
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+           alertDialog
+                    .setTitle("Terms and Privacy Policy")
+                    .setMessage("By clicking continue, you agree to our Terms and " +
+                            "Privacy Policy. We use a service that's pre-installed on your device " +
+                            "to auto update apps. You can turn off the service at any time.")
+                    .setPositiveButton("Continue", (dialog, which) -> {
+                        TermsAndConditions termsAndConditions = new TermsAndConditions();
+                        if (!termsAndConditions.isAdded()) {
+                            termsAndConditions.show(getSupportFragmentManager(),"TermsAndConditions");
+                        }
+                    }).show();
         });
     }
 
@@ -70,7 +90,7 @@ public class Login extends AppCompatActivity{
             firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"login Success",Toast.LENGTH_SHORT).show();
-                    updateUI(email);
+                    checkIfUserVerified(firebaseAuth.getCurrentUser());
                     progressDialog.stopLoading();
                 }
                 if (!task.isSuccessful()) {
@@ -153,7 +173,7 @@ public class Login extends AppCompatActivity{
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-       checkIfUserVerified(currentUser);
+        checkIfUserVerified(currentUser);
     }
     private void checkIfUserVerified(FirebaseUser currentUser) {
         if (currentUser != null){

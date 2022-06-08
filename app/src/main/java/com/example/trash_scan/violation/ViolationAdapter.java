@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -24,9 +25,6 @@ public class ViolationAdapter extends RecyclerView.Adapter<ViolationAdapter.Viol
         void onContainerClick(int postion);
     }
 
-    public void setMyAdapterListener(ViolationAdapterLister myAdapterListener) {
-        this.violationAdapterListener = myAdapterListener;
-    }
 
     public ViolationAdapter( Context context,List<ViolationsAct> violationsActs,ViolationAdapterLister violationAdapterListener){
         this.context = context;
@@ -58,7 +56,7 @@ public class ViolationAdapter extends RecyclerView.Adapter<ViolationAdapter.Viol
 
     public class ViolationViewHolder extends RecyclerView.ViewHolder {
         TextView text_title;
-        MaterialCardView card_violation;
+        CardView card_violation;
         public ViolationViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             text_title = itemView.findViewById(R.id.text_title);

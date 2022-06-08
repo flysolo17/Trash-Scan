@@ -82,7 +82,7 @@ public class JunkShopProfile extends Fragment {
 
         // Set view objects
         binding.buttonAddMyLocation.setOnClickListener(view12 -> {
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_nav_profile_to_nav_maps);
+            Toast.makeText(binding.getRoot().getContext(), "This feature is not implemented yet", Toast.LENGTH_SHORT).show();
         });
     }
 

@@ -13,6 +13,18 @@
         <action
             android:id="@+id/action_nav_home_to_junkShopsFragment"
             app:destination="@id/junkShopsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_violation"
+            app:destination="@id/violation" />
+        <action
+            android:id="@+id/action_nav_home_to_tips"
+            app:destination="@id/tips" />
+        <action
+            android:id="@+id/action_nav_home_to_trashActivity"
+            app:destination="@id/trashActivity" />
 
     </fragment>
     <fragment
@@ -73,5 +85,29 @@
             android:id="@+id/action_viewJunkShopProfile_to_messagingFragment"
             app:destination="@id/messagingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.trash_scan.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/violation"
+        android:name="com.example.trash_scan.appfeatures.Violation"
+        android:label="activity_violation"
+        tools:layout="@layout/activity_violation" />
+    <fragment
+        android:id="@+id/tips"
+        android:name="com.example.trash_scan.appfeatures.tips"
+        android:label="Tips"
+        tools:layout="@layout/activity_tips" />
+    <fragment
+        android:id="@+id/trashActivity"
+        android:name="com.example.trash_scan.appfeatures.TrashActivity"
+        android:label="activity_trash"
+        tools:layout="@layout/activity_trash" />
 
 </navigation>

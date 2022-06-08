@@ -23,7 +23,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.TrashScan.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.TrashScan.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
     <style name="Theme.TrashScan.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -33,7 +33,7 @@
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="colorSurface">@color/colorSuface</item>
+        <item name="colorSurface">@color/colorSurface</item>
 
     </style>
 </resources>

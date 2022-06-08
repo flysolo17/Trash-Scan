@@ -1,81 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".appfeatures.TrashActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:layout_weight="1">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="224dp"
+            android:layout_height="224dp"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Waste Type:"
+                style="@style/TextAppearance.MaterialComponents.Headline6"/>
+            <TextView
+                android:id="@+id/textWasteType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#C30000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recycable:"
+                style="@style/TextAppearance.MaterialComponents.Headline6"/>
+            <TextView
+                android:id="@+id/textIsRecycable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#C30000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="30sp"
+                    android:text="Waste Type Confidences:"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textWasteTypeConfidences"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#000"
+                    android:fontFamily="@font/poppins_medium"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="30sp"
+                    android:text="Recycable Confidences:"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textRecycableConfindences"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#000"
+                    android:fontFamily="@font/poppins_medium" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recycablelink"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/recycableLinkText"
+        android:fontFamily="@font/poppins_medium"/>
     <Button
         android:id="@+id/button"
         android:layout_width="332dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="65dp"
         android:backgroundTint="#ACC17C"
         android:backgroundTintMode="src_in"
         android:drawableTint="#B66F6F"
-
         android:rotationX="8"
         android:text="Take Picture"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:textAllCaps="false"
         android:textSize="21sp"
         android:textStyle="bold"
         tools:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="370sp"
-        android:layout_height="370sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10sp" />
-
-    <TextView
-        android:id="@+id/classified"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10sp"
-        android:text="Classified as:"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/classified"
-        android:layout_centerHorizontal="true"
-        android:text=""
-        android:textColor="#C30000"
-        android:textSize="27sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/confidencesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/result"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30sp"
-        android:text="Confidences:"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/confidence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/confidencesText"
-        android:layout_centerHorizontal="true"
-        android:text=""
-        android:textColor="#000"
-        android:textSize="22sp" />
-</RelativeLayout>
+</LinearLayout>
