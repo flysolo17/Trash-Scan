@@ -107,7 +107,7 @@
     <fragment
         android:id="@+id/trashActivity"
         android:name="com.example.trash_scan.appfeatures.TrashActivity"
-        android:label="activity_trash"
+        android:label="Trash Scan"
         tools:layout="@layout/activity_trash" />
 
 </navigation>
