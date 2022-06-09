@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:gravity="center"
-            android:text="You hava to sign in again after you verify your account!"
+            android:text="You have to sign in again after you verify your account!"
             android:id="@+id/textEmailVerified"/>
         <Button
             android:layout_width="wrap_content"
