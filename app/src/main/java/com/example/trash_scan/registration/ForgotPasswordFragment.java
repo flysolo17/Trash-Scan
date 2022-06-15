@@ -17,6 +17,8 @@ import com.example.trash_scan.R;
 import com.example.trash_scan.databinding.FragmentForgotPasswordBinding;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.auth.FirebaseAuthCredentialsProvider;
 
 
 public class ForgotPasswordFragment extends DialogFragment {
@@ -59,7 +61,7 @@ public class ForgotPasswordFragment extends DialogFragment {
                         } else {
                             Toast.makeText(binding.getRoot().getContext(), "Try again! something wrong happened!",Toast.LENGTH_SHORT).show();
                         }
-                    });
+            });
         }
     }
 }

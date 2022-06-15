@@ -24,6 +24,7 @@ import com.example.trash_scan.databinding.FragmentJunkShopProfileBinding;
 import com.example.trash_scan.firebase.models.Rating;
 import com.example.trash_scan.firebase.models.Recycables;
 import com.example.trash_scan.firebase.models.User;
+import com.example.trash_scan.registration.ChangePasswordFragment;
 import com.example.trash_scan.registration.Login;
 import com.example.trash_scan.viewmodels.UserViewModel;
 
@@ -31,6 +32,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
+
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,13 +80,13 @@ public class JunkShopProfile extends Fragment {
         String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         getRatings(id);
         getRecycables(id);
-
-
-
-        // Set view objects
-        binding.buttonAddMyLocation.setOnClickListener(view12 -> {
-            Toast.makeText(binding.getRoot().getContext(), "This feature is not implemented yet", Toast.LENGTH_SHORT).show();
+        binding.buttonChangePassword.setOnClickListener(v -> {
+            ChangePasswordFragment changePasswordFragment = new ChangePasswordFragment();
+            if (!changePasswordFragment.isAdded()){
+                changePasswordFragment.show(getParentFragmentManager(),"ChangePassword");
+            }
         });
+
     }
 
     private void getUserInfo(String myID) {

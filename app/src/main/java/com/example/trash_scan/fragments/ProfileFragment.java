@@ -24,6 +24,7 @@ import com.example.trash_scan.ProgressDialog;
 import com.example.trash_scan.R;
 import com.example.trash_scan.databinding.FragmentProfileBinding;
 import com.example.trash_scan.firebase.models.User;
+import com.example.trash_scan.registration.ChangePasswordFragment;
 import com.example.trash_scan.viewmodels.UserViewModel;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -106,6 +107,12 @@ public class ProfileFragment extends Fragment {
                     User user = new User(this.user.getUserID(),imageURI.toString(),firstname,lastname,address,this.user.getUserEmail(),phone,this.user.getUserType());
                     updateUser(user);
                 }
+            }
+        });
+        binding.buttonChangePassword.setOnClickListener(v -> {
+            ChangePasswordFragment changePasswordFragment = new ChangePasswordFragment();
+            if (!changePasswordFragment.isAdded()){
+                changePasswordFragment.show(getChildFragmentManager(),"ChangePassword");
             }
         });
     }

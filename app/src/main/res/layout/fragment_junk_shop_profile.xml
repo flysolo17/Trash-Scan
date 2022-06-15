@@ -127,23 +127,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone" />
+        <TextView
+            android:id="@+id/textCompleteAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/textCompleteAddress"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_gravity="center_vertical"
-                android:text="@string/address"
-                style="@style/TextAppearance.Compat.Notification.Title.Media"/>
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:text="Change Password"/>
+                <Button
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:text="Add my location"/>
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/buttonAddMyLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_location"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:text="Add my location"/>
 
     </LinearLayout>
         <TextView
