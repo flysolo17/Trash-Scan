@@ -217,6 +217,7 @@
         <item> Tiposu</item>
         <item> Tulong</item>
     </string-array>
-    
+
     <string name="recycablelink">What do recycables become?<a href="https://www.peoriacounty.gov/1145/What-do-recyclables-become#:~:text=%20What%20Do%20Your%20Recyclables%20Become%20%201,to%20make%20new%20cans%20or%20foil.%20More%20">Click here!</a></string>
+    <string name="forgot_password">Forgot Password</string>
 </resources>

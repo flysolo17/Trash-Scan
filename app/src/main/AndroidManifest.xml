@@ -18,10 +18,6 @@
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAGazifqsHGixvk3-ktVmRWMFPrtTG1rdg"/>
         <activity
-            android:name=".appfeatures.tips"
-            android:exported="false"
-            android:theme="@style/Theme.TrashScan.NoActionBar" />
-        <activity
             android:name=".registration.RegistrationActivity"
             android:exported="false"
             android:label="@string/title_activity_registration"
@@ -35,13 +31,8 @@
         <activity
             android:name=".violation.ViolationBodyActivity"
             android:theme="@style/Theme.TrashScan.NoActionBar" />
-        <activity
-            android:name=".appfeatures.Violation"
-            android:theme="@style/Theme.TrashScan.NoActionBar" />
-        <activity
-            android:name=".appfeatures.TrashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.TrashScan.NoActionBar" />
+
+
         <activity
             android:name=".registration.Login"
             android:theme="@style/Theme.Design.Light.NoActionBar">
@@ -58,6 +49,14 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".notification.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

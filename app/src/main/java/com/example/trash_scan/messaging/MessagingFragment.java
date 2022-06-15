@@ -1,10 +1,13 @@
 package com.example.trash_scan.messaging;
 
+import android.app.NotificationManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -21,6 +24,7 @@ import com.example.trash_scan.adapter.MessagesAdapter;
 import com.example.trash_scan.databinding.FragmentMessagingBinding;
 import com.example.trash_scan.firebase.models.Messages;
 import com.example.trash_scan.firebase.models.User;
+import com.example.trash_scan.notification.Utils;
 import com.example.trash_scan.registration.Login;
 import com.example.trash_scan.viewmodels.UserViewModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -123,7 +127,6 @@ public class MessagingFragment extends Fragment {
                         messages.getSenderID().equals(otherUserID) && messages.getReceiverID().equals(myID)) {
                             messagesList.add(messages);
                         }
-
                     }
                 }
                 adapter = new MessagesAdapter(binding.getRoot().getContext(),messagesList);
@@ -131,4 +134,15 @@ public class MessagingFragment extends Fragment {
             }
         });
     }
+    private void showNotification(String title , String message) {
+        NotificationCompat.Builder builder  = new NotificationCompat.Builder(binding.getRoot().getContext(), Utils.CHANNEL_ID);
+        builder.setContentTitle(title)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setAutoCancel(true);
+        NotificationManagerCompat compat =  NotificationManagerCompat.from(binding.getRoot().getContext());
+        compat.notify(001,builder.build());
+    }
+
 }

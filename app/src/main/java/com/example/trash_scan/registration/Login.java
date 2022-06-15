@@ -1,5 +1,6 @@
 package com.example.trash_scan.registration;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +25,8 @@ import com.example.trash_scan.MainActivity;
 import com.example.trash_scan.ProgressDialog;
 import com.example.trash_scan.R;
 import com.example.trash_scan.firebase.models.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -43,7 +46,7 @@ public class Login extends AppCompatActivity{
     public static String userID = "";
     private FirebaseAuth firebaseAuth;
     private Validation validation;
-    private Button button_login;
+    private Button button_login,button_forgot_password;
     private TextInputLayout input_email,input_password;
     private TextView text_create_account;
     private FirebaseFirestore firestore;
@@ -82,6 +85,13 @@ public class Login extends AppCompatActivity{
                         }
                     }).show();
         });
+        button_forgot_password.setOnClickListener( v -> {
+            ForgotPasswordFragment forgotPasswordFragment = new ForgotPasswordFragment();
+            if (!forgotPasswordFragment.isAdded()) {
+                forgotPasswordFragment.show(getSupportFragmentManager(),"Forgot Password");
+            }
+        });
+
     }
 
     //TODO: login script
@@ -129,6 +139,7 @@ public class Login extends AppCompatActivity{
         input_email = findViewById(R.id.input_email);
         input_password = findViewById(R.id.input_password);
         text_create_account = findViewById(R.id.text_create_account);
+        button_forgot_password = findViewById(R.id.buttonForgotPassword);
     }
 
 
@@ -190,5 +201,6 @@ public class Login extends AppCompatActivity{
             }
         }
     }
+
 
 }

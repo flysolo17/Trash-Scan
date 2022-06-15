@@ -73,7 +73,6 @@ public class JunkshopOwner extends AppCompatActivity {
 
     private void hideBottomNav() {
         binding.bottomNavigation.setVisibility(View.GONE);
-
     }
     @Override
     public void onPostCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
