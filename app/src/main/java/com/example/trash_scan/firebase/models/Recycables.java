@@ -1,7 +1,10 @@
 package com.example.trash_scan.firebase.models;
 
 public class Recycables {
+    public static final String TABLE_NAME= "Recycables";
+    public static final String JUNKSHOP_ID= "junkshopID";
     String recycableID;
+    String junkshopID;
     String recycalbleImage;
     String recycableItemName;
     String recycableInformation;
@@ -9,8 +12,9 @@ public class Recycables {
     public Recycables() {
     }
 
-    public Recycables(String recycableID, String recycalbleImage, String recycableItemName, String recycableInformation,int recycablePrice) {
+    public Recycables(String recycableID,String junkshopID, String recycalbleImage, String recycableItemName, String recycableInformation,int recycablePrice) {
         this.recycableID = recycableID;
+        this.junkshopID = junkshopID;
         this.recycalbleImage = recycalbleImage;
         this.recycableItemName = recycableItemName;
         this.recycableInformation = recycableInformation;
@@ -24,6 +28,14 @@ public class Recycables {
 
     public void setRecycableID(String recycableID) {
         this.recycableID = recycableID;
+    }
+
+    public String getJunkshopID() {
+        return junkshopID;
+    }
+
+    public void setJunkshopID(String junkshopID) {
+        this.junkshopID = junkshopID;
     }
 
     public String getRecycalbleImage() {

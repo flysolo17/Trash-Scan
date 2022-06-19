@@ -1,145 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".appfeatures.TrashActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        android:layout_weight="1">
-
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="224dp"
-            android:layout_gravity="center"
-            android:layout_height="224dp"
-            android:layout_margin="10dp"
-            android:background="@color/black"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+        android:background="#F1EFEF"
+        android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Waste Type"
-                        style="@style/TextAppearance.MaterialComponents.Headline6"/>
-                    <TextView
-                        android:id="@+id/textWasteType"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                    android:fontFamily="@font/poppins_medium"
-                        android:textColor="@color/black"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:background="@color/black" />
+
+
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textWasteName"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Confidences"
-                    style="@style/TextAppearance.MaterialComponents.Headline6" />
-                    <TextView
-                        android:id="@+id/textWasteTypeConfidences"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textColor="#000"
-                        android:fontFamily="@font/poppins_medium"/>
-                </LinearLayout>
-            </LinearLayout>
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="No waste scanned"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:background="@color/white"
+                    android:textColor="@color/black" />
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Details"
+                            android:textSize="14sp"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/textMoreInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="More Info"
+
+                            android:textColor="#3F51B5"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Waste Type" />
+
+                            <TextView
+                                android:id="@+id/textWasteType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text=""
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Recycable" />
+
+                            <TextView
+                                android:id="@+id/textRecycable"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text=""
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Recycable"
-                            style="@style/TextAppearance.MaterialComponents.Headline6"/>
-                        <TextView
-                            android:id="@+id/textIsRecycable"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/poppins_medium" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Confidences"
-                            style="@style/TextAppearance.MaterialComponents.Headline6"
-                             />
-                        <TextView
-                            android:id="@+id/textRecycableConfindences"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:textColor="#000"
-                            android:fontFamily="@font/poppins_medium"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Marketable" />
 
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/recycablelink"
-        android:gravity="center"
-        android:visibility="gone"
-        android:id="@+id/recycableLinkText"
-        android:fontFamily="@font/poppins_medium"/>
-    <Button
+                        <TextView
+                            android:id="@+id/textMarket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text=""
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Market Place"
+                        android:textSize="14sp"
+                        android:textColor="#000" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewWaste"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/row_junkshop_waste"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Junk Shop Owners"
+                android:textSize="14sp"
+                android:textColor="#000" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewJunkShopOwners"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/button"
-        android:layout_width="332dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#ACC17C"
-        android:backgroundTintMode="src_in"
-        android:drawableTint="#B66F6F"
-        android:rotationX="8"
-        android:text="Take Picture"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         android:textAllCaps="false"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        tools:visibility="visible" />
-</LinearLayout>
+        android:drawableLeft="@drawable/ic_group_22"
+        android:text="@string/scan_trash"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"
+        tools:visibility="visible"/>
+</FrameLayout>

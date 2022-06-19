@@ -99,7 +99,8 @@ public class AddRecycableFragment extends Fragment {
             else {
                 String id = firestore.collection(User.TABLE_NAME).document(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .collection("Recycables").document().getId();
-                uploadRecycable(imageURI,id,itemName,information,Integer.parseInt(itemPrice));
+                String myID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                uploadRecycable(imageURI,id,myID,itemName,information,Integer.parseInt(itemPrice));
             }
         });
 
@@ -111,24 +112,22 @@ public class AddRecycableFragment extends Fragment {
     }
 
     //TODO: upload file in firestore and storage
-    private void uploadRecycable(Uri uri ,String id,String itemname ,String information,int price){
+    private void uploadRecycable(Uri uri ,String id,String myID,String itemname ,String information,int price){
         progressDialog.isLoading();
         if (uri != null) {
             StorageReference fileReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
             storageTask = fileReference.putFile(uri).addOnSuccessListener(taskSnapshot -> {
                 fileReference.getDownloadUrl().addOnSuccessListener(uri1 -> {
                   progressDialog.stopLoading();
-
-                  Recycables recycables = new Recycables(id,uri1.toString(),itemname,information,price);
-                  addRecycable(FirebaseAuth.getInstance().getCurrentUser().getUid(),recycables);
+                  Recycables recycables = new Recycables(id,myID,uri1.toString(),itemname,information,price);
+                  addRecycable(recycables);
                 });
             });
         }
     }
-    private void addRecycable(String myID,Recycables recycables){
+    private void addRecycable(Recycables recycables){
         progressDialog.isLoading();
-        firestore.collection(User.TABLE_NAME).document(myID)
-                .collection("Recycables")
+        firestore.collection("Recycables")
                 .document(recycables.getRecycableID())
                 .set(recycables)
                 .addOnCompleteListener(task -> {

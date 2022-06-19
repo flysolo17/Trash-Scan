@@ -68,8 +68,8 @@ public class JunkShopHome extends Fragment implements RecycableAdapter.OnRecycab
     }
     private void getRecycables(String myID) {
         recycablesList = new ArrayList<>();
-        firestore.collection(User.TABLE_NAME).document(myID)
-                .collection("Recycables")
+        firestore.collection("Recycables")
+                .whereEqualTo(Recycables.JUNKSHOP_ID,myID)
                 .addSnapshotListener((value, error) -> {
                     recycablesList.clear();
                     if (error != null) {

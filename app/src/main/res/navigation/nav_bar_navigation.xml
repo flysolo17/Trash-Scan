@@ -108,6 +108,10 @@
         android:id="@+id/trashActivity"
         android:name="com.example.trash_scan.appfeatures.TrashActivity"
         android:label="Trash Scan"
-        tools:layout="@layout/activity_trash" />
+        tools:layout="@layout/activity_trash" >
+        <action
+            android:id="@+id/action_trashActivity_to_messagingFragment"
+            app:destination="@id/messagingFragment" />
+    </fragment>
 
 </navigation>

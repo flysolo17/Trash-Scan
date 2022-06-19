@@ -138,8 +138,8 @@ public class ViewJunkShopProfile extends Fragment implements RecycableAdapter.On
     }
     private void getRecycables(String myID) {
         recycablesList = new ArrayList<>();
-        firestore.collection(User.TABLE_NAME).document(myID)
-                .collection("Recycables")
+        firestore.collection(Recycables.TABLE_NAME)
+                .whereEqualTo(Recycables.JUNKSHOP_ID,myID)
                 .addSnapshotListener((value, error) -> {
                     recycablesList.clear();
                     if (error != null) {
@@ -147,10 +147,8 @@ public class ViewJunkShopProfile extends Fragment implements RecycableAdapter.On
                     }
                     if (value != null) {
                         for (DocumentSnapshot snapshot : value) {
-                            if (snapshot != null) {
-                                Recycables recycables = snapshot.toObject(Recycables.class);
-                                recycablesList.add(recycables);
-                            }
+                            Recycables recycables =snapshot.toObject(Recycables.class);
+                            recycablesList.add(recycables);
                         }
                         recycableAdapter = new RecycableAdapter(binding.getRoot().getContext(),recycablesList,this);
                         binding.recyclerviewRecycables.setAdapter(recycableAdapter);

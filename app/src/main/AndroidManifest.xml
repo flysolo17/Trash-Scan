@@ -21,7 +21,7 @@
             android:name=".registration.RegistrationActivity"
             android:exported="false"
             android:label="@string/title_activity_registration"
-            android:theme="@style/Theme.TrashScan.NoActionBar" />
+            />
         <activity
             android:name=".junkshop.JunkshopOwner"
             android:exported="false" />
@@ -29,13 +29,12 @@
             android:name=".garbage_collector"
             android:exported="false" />
         <activity
-            android:name=".violation.ViolationBodyActivity"
-            android:theme="@style/Theme.TrashScan.NoActionBar" />
+            android:name=".violation.ViolationBodyActivity" />
 
 
         <activity
             android:name=".registration.Login"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,8 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar" />
+            android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

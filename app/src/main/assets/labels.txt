@@ -1,2 +1,14 @@
-Recycable
-Non Recycable
+Bond Paper,Bio Degradable,Non Recyclable,Not sellable
+Paper Bag,Bio Degradable,Non Recyclable,Not sellable
+Tissue,Bio Degradable,Non Recyclable,Not sellable
+Card Board,Bio Degradable,Recyclable,Sellable
+Battery,Non Bio Degradable,Non Recyclable,Not sellable
+Face Mask,Non Bio Degradable,Non Recyclable,Not sellable
+Glass Bottle,Non Bio Degradable,Non Recyclable,Sellable
+Aluminum Foil,Non Bio Degradable,Recyclable,Not sellable
+Cans,Non Bio Degradable,Recyclable,Sellable
+Junk Food Wrapper,Non Bio Degradable,Recyclable,Not sellable
+Plastic Bottle,Non Bio Degradable,Recyclable,Sellable
+Plastic Container,Non Bio Degradable,Recyclable,Sellable
+Plastic Fork,Non Bio Degradable,Recyclable,Not sellable
+Plastic Spoon,Non Bio Degradable,Recyclable,Not sellable

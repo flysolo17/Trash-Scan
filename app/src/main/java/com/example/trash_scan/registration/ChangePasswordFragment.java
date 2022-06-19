@@ -46,7 +46,7 @@ public class ChangePasswordFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         binding = FragmentChangePasswordBinding.inflate(inflater,container,false);
         return binding.getRoot();
     }

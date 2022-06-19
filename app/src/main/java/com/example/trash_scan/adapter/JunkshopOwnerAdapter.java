@@ -32,6 +32,7 @@ public class JunkshopOwnerAdapter extends FirestoreRecyclerAdapter<User,Junkshop
     @Override
     protected void onBindViewHolder(@NonNull JunkShopOwnerViewHolder holder, int position, @NonNull User model) {
         holder.textOwnerName.setText(model.getUserFirstName() + " " + model.getUserLastName());
+        holder.textUserEmail.setText(model.getUserEmail());
         holder.itemView.setOnClickListener(v -> {
             onJunkShopClick.onJunkShopOwnerClick(position);
         });
@@ -44,10 +45,11 @@ public class JunkshopOwnerAdapter extends FirestoreRecyclerAdapter<User,Junkshop
         return new JunkShopOwnerViewHolder(view);
     }
     public static class JunkShopOwnerViewHolder  extends RecyclerView.ViewHolder {
-        TextView textOwnerName;
+        TextView textOwnerName,textUserEmail;
         public JunkShopOwnerViewHolder(@NonNull View itemView) {
             super(itemView);
             textOwnerName = itemView.findViewById(R.id.junkShopOwnerName);
+            textUserEmail = itemView.findViewById(R.id.userEmail);
         }
     }
 }
