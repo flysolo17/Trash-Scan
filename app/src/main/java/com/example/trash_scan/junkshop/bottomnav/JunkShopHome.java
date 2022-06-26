@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,10 +19,12 @@ import android.widget.Toast;
 
 import com.example.trash_scan.R;
 import com.example.trash_scan.adapter.RecycableAdapter;
+import com.example.trash_scan.appfeatures.UpdateRecycable;
 import com.example.trash_scan.databinding.FragmentAddRecycableBinding;
 import com.example.trash_scan.databinding.FragmentJunkShopHomeBinding;
 import com.example.trash_scan.firebase.models.Recycables;
 import com.example.trash_scan.firebase.models.User;
+import com.example.trash_scan.viewmodels.RecycableViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -41,11 +44,12 @@ public class JunkShopHome extends Fragment implements RecycableAdapter.OnRecycab
     private List<Recycables> recycablesList;
     private FirebaseFirestore firestore;
     private final static String TAG = ".JunkSHopHome";
+    private RecycableViewModel recycableViewModel;
     private RecycableAdapter adapter;
     private void init() {
         firestore =FirebaseFirestore.getInstance();
         binding.recyclerviewRecycables.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-
+        recycableViewModel = new ViewModelProvider(requireActivity()).get(RecycableViewModel.class);
     }
 
     @Override
@@ -136,6 +140,10 @@ public class JunkShopHome extends Fragment implements RecycableAdapter.OnRecycab
 
     @Override
     public void onRecycableClick(int position) {
-
+        recycableViewModel.setRecycables(recycablesList.get(position));
+        UpdateRecycable updateRecycable = new UpdateRecycable();
+        if (!updateRecycable.isAdded()) {
+            updateRecycable.show(getChildFragmentManager(),"Update Recycable");
+        }
     }
 }
