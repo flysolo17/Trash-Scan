@@ -131,18 +131,15 @@ public class MessagingFragment extends Fragment {
                 }
                 adapter = new MessagesAdapter(binding.getRoot().getContext(),messagesList);
                 binding.recyclerviewMessages.setAdapter(adapter);
+                if (messagesList.size() == 0) {
+                    binding.textNoMessages.setVisibility(View.VISIBLE);
+                } else  {
+                    binding.textNoMessages.setVisibility(View.GONE);
+                }
             }
+
         });
     }
-    private void showNotification(String title , String message) {
-        NotificationCompat.Builder builder  = new NotificationCompat.Builder(binding.getRoot().getContext(), Utils.CHANNEL_ID);
-        builder.setContentTitle(title)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText(message)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setAutoCancel(true);
-        NotificationManagerCompat compat =  NotificationManagerCompat.from(binding.getRoot().getContext());
-        compat.notify(001,builder.build());
-    }
+
 
 }

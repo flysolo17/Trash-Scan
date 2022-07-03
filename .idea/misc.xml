@@ -7,7 +7,8 @@
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/drawable/ic_rectangle_200.xml" value="0.357" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout-v23/activity_trash.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/activity_trash.xml" value="0.17238095238095238" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/activity_trash.xml" value="0.26151560178306094" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_about.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_add_recycable.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_address.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_change_password.xml" value="0.25416666666666665" />
@@ -16,18 +17,27 @@
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_faq.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_infographics.xml" value="0.1" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_junk_shop_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_junk_shop_messages.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_junk_shop_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_junk_shop_reply.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_market_place.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_messaging.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_reward.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_update_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_update_recycable.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_view_junk_shop_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/fragment_view_waste.xml" value="0.3566362715298885" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/infographics.xml" value="0.13396764985727877" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/row_junkshop_waste.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/row_no_messages.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/row_recycables.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/row_user_chats.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/row_users.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/layout/view_congrats.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/John Mark Ballangca/Desktop/ucu_project/Trash-Scan/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
         <entry key="..\:/downloads/TrashScan2/TrashScan2/app/src/main/res/drawable-v24/cards2.xml" value="0.2205" />
         <entry key="..\:/downloads/TrashScan2/TrashScan2/app/src/main/res/drawable/card5.xml" value="0.198" />
         <entry key="..\:/downloads/TrashScan2/TrashScan2/app/src/main/res/drawable/ic_register.xml" value="0.217" />

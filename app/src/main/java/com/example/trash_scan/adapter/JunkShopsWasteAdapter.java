@@ -22,10 +22,14 @@ import java.util.List;
 public class JunkShopsWasteAdapter extends RecyclerView.Adapter<JunkShopsWasteAdapter.JunkShopWasteViewHolder> {
     private Context context;
     private List<Recycables> recyclablesList;
-
-    public JunkShopsWasteAdapter(Context context, List<Recycables> recyclablesList) {
+    private OnWasteClick onWasteClick;
+    public interface OnWasteClick{
+        void onViewWasteInfo(int position);
+    }
+    public JunkShopsWasteAdapter(Context context, List<Recycables> recyclablesList,OnWasteClick onWasteClick) {
         this.context = context;
         this.recyclablesList = recyclablesList;
+        this.onWasteClick = onWasteClick;
     }
 
     @NonNull
@@ -44,6 +48,9 @@ public class JunkShopsWasteAdapter extends RecyclerView.Adapter<JunkShopsWasteAd
         holder.textWasteName.setText(recycables.getRecycableItemName());
         holder.textWastePrice.setText(String.valueOf(recycables.getRecycablePrice()));
         holder.getjunkshopID(recycables.getJunkshopID());
+        holder.itemView.setOnClickListener(v -> {
+            onWasteClick.onViewWasteInfo(position);
+        });
     }
 
     @Override
@@ -53,7 +60,7 @@ public class JunkShopsWasteAdapter extends RecyclerView.Adapter<JunkShopsWasteAd
 
     public static class JunkShopWasteViewHolder extends RecyclerView.ViewHolder {
         ImageView imageWaste;
-        TextView textWasteOwner,textWasteName,textWastePrice;
+        TextView textWasteOwner,textWasteName,textWastePrice,textAddress;
 
         public JunkShopWasteViewHolder(@NonNull View itemView) {
             super(itemView);

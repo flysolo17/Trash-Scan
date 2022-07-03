@@ -86,6 +86,7 @@ public class ChatsFragment extends Fragment implements ChatsAdapter.OnChatClick 
                     }
                 }
                 getUserChats();
+
             }
         });
 
@@ -106,6 +107,9 @@ public class ChatsFragment extends Fragment implements ChatsAdapter.OnChatClick 
                                     adapter.notifyDataSetChanged();
                                 }
                             }
+                        }
+                        if (userList.size() == 0) {
+                            binding.textNoMessages.setVisibility(View.VISIBLE);
                         }
                     }
                 }

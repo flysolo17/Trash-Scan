@@ -3,6 +3,7 @@ package com.example.trash_scan.firebase.models;
 public class Recycables {
     public static final String TABLE_NAME= "Recycables";
     public static final String JUNKSHOP_ID= "junkshopID";
+    public static final String RECYCLABLE_NAME= "recycableItemName";
     String recycableID;
     String junkshopID;
     String recycalbleImage;

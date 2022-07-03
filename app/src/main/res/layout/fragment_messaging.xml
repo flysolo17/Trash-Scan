@@ -47,11 +47,23 @@
                     android:text="Visit Profile"/>
 
             </LinearLayout>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerviewMessages"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/textNoMessages"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="@string/no_messages_here"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewMessages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </FrameLayout>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

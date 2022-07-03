@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity  implements LogOutDialog.Log
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_contact,R.id.nav_setting,R.id.nav_logout)
+                R.id.nav_home, R.id.nav_contact,R.id.nav_setting,R.id.nav_about,R.id.nav_logout)
                 .setOpenableLayout(binding.drawer)
                 .build();
 

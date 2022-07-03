@@ -1,6 +1,7 @@
 package com.example.trash_scan.fragments;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -20,15 +22,25 @@ import com.example.trash_scan.appfeatures.TrashActivity;
 import com.example.trash_scan.appfeatures.tips;
 import com.example.trash_scan.databinding.FragmentHomeBinding;
 import com.example.trash_scan.firebase.models.Destinations;
+import com.example.trash_scan.firebase.models.Points;
 import com.example.trash_scan.firebase.models.User;
 import com.example.trash_scan.viewmodels.UserViewModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.nio.file.attribute.PosixFileAttributes;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
@@ -36,6 +48,7 @@ public class HomeFragment extends Fragment {
     private DestinationAdapter destinationAdapter;
     private User user = null;
     private UserViewModel userViewModel;
+    private static final DecimalFormat decfor = new DecimalFormat("0.00");
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,12 +94,38 @@ public class HomeFragment extends Fragment {
                     }
                     String fullname = user.getUserFirstName() + " " + user.getUserLastName();
                     binding.userFullname.setText(fullname);
-                    binding.userEmail.setText(user.getUserEmail());
+                    getAllPoints(user.getUserID());
                 }
             }
         });
     }
+    private void getAllPoints(String id) {
+        List<Points> pointsList = new ArrayList<>();
+        firestore.collection(User.TABLE_NAME)
+                .document(id)
+                .collection("Points")
+                .addSnapshotListener((value, error) -> {
+                    if (error != null) {
+                        error.printStackTrace();
+                    } else  {
+                        if (value != null) {
+                            for (QueryDocumentSnapshot documentSnapshot : value){
+                                Points points = documentSnapshot.toObject(Points.class);
+                                pointsList.add(points);
+                            }
+                            computePoints(pointsList);
+                        }
+                    }
+                });
+    }
 
+    private void computePoints(List<Points> pointsList) {
+        float pointsTotal = 0;
+        for (Points points : pointsList){
+            pointsTotal += points.getPoints();
+        }
+        binding.textPoints.setText(decfor.format(pointsTotal));
+    }
     @Override
     public void onStart() {
         super.onStart();

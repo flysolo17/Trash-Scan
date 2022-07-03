@@ -223,4 +223,6 @@
     <string name="change_password">Change Password</string>
     <string name="waste_name">Waste Name:</string>
     <string name="scan_trash">Scan Trash</string>
+    <string name="no_messages_here">No Messages here!</string>
+    <string name="market_place">Market Place</string>
 </resources>

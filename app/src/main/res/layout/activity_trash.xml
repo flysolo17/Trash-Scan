@@ -63,7 +63,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_medium"
                             android:text="More Info"
-
+                            android:visibility="gone"
                             android:textColor="#3F51B5"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -138,31 +138,64 @@
                     </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layoutMarketPlace"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:background="@color/white"
                 android:padding="10dp"
+                android:visibility="gone"
                 android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
-                        android:text="Market Place"
+                        android:layout_weight="1"
+                        android:text="@string/market_place"
                         android:textSize="14sp"
                         android:textColor="#000" />
+                    <TextView
+                        android:id="@+id/textGotoMarkerPlace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Go to marketplace"
+                        android:textSize="14sp"
+                        android:textColor="#000" />
+                </LinearLayout>
 
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textCantFind"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text=""
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="#000" />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerviewWaste"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:listitem="@layout/row_junkshop_waste"/>
+
+                </FrameLayout>
             </LinearLayout>
         <LinearLayout
+            android:id="@+id/layoutJunkShopOwners"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:visibility="gone"
             android:background="@color/white"
             android:padding="10dp"
             android:layout_marginTop="10dp">
