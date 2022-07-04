@@ -125,6 +125,17 @@ public class HomeFragment extends Fragment {
             pointsTotal += points.getPoints();
         }
         binding.textPoints.setText(decfor.format(pointsTotal));
+        displayBadge(pointsTotal);
+    }
+    private void displayBadge(float points) {
+        if (points <= 50) {
+            binding.imageBadge.setBackgroundResource(R.drawable.badge3);
+        } else if (points > 50 && points <= 100) {
+            binding.imageBadge.setBackgroundResource(R.drawable.badge2);
+        } else {
+            binding.imageBadge.setBackgroundResource(R.drawable.badge1);
+        }
+
     }
     @Override
     public void onStart() {
