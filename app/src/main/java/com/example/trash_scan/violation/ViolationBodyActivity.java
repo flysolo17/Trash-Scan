@@ -23,7 +23,7 @@ public class ViolationBodyActivity extends AppCompatActivity {
         text_title.setText(intent.getStringExtra("title"));
         text_body.setText(intent.getStringExtra("body"));
 
-        button_back.setOnClickListener(v -> new Intent(ViolationBodyActivity.this, Violation.class));
+        button_back.setOnClickListener(v -> finish());
     }
     private void initViews(){
         text_title = findViewById(R.id.text_title);

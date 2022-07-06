@@ -130,10 +130,13 @@ public class HomeFragment extends Fragment {
     private void displayBadge(float points) {
         if (points <= 50) {
             binding.imageBadge.setBackgroundResource(R.drawable.badge3);
+            binding.textRewardStatus.setText("Bronze");
         } else if (points > 50 && points <= 100) {
             binding.imageBadge.setBackgroundResource(R.drawable.badge2);
+            binding.textRewardStatus.setText("Silver");
         } else {
             binding.imageBadge.setBackgroundResource(R.drawable.badge1);
+            binding.textRewardStatus.setText("Gold");
         }
 
     }

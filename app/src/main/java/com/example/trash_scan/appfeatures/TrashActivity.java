@@ -77,6 +77,8 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -95,6 +97,7 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
     private JunkshopOwnerAdapter junkshopOwnerAdapter;
     private RecycableViewModel recycableViewModel;
     private String scannedResult = "";
+    private List<Points> pointsList;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -111,6 +114,7 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        pointsList = new ArrayList<>();
         recycableViewModel = new ViewModelProvider(requireActivity()).get(RecycableViewModel.class);
         userViewModel = new ViewModelProvider(requireActivity()).get(UserViewModel.class);
         firestore = FirebaseFirestore.getInstance();
@@ -239,7 +243,7 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
                 String result = labels.get(maxPos);
                 printResult(result);
                 Points points = new Points(result,maxConfidence);
-                addPoints(points);
+                getEarnedPointsToday(points);
             }else {
                 binding.textWasteName.setText("I didn't catch that");
             }
@@ -335,6 +339,43 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
                 })
                 .show();
     }
+    private void getEarnedPointsToday(Points currentPoints) {
+        pointsList.clear();
+        firestore.collection(User.TABLE_NAME)
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .collection(Points.TABLE_NAME)
+                .whereGreaterThan(Points.TIMESTAMP,startOfDay(System.currentTimeMillis()))
+                .whereLessThan(Points.TIMESTAMP,endOfDay(System.currentTimeMillis()))
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot documents: task.getResult()) {
+                            Points points = documents.toObject(Points.class);
+                            pointsList.add(points);
+                        }
+                        displayReward(computePointsToday(pointsList),currentPoints);
+                    }
+                });
+    }
+    private float computePointsToday(List<Points> pointsList) {
+        float total = 0;
+        for (Points points  : pointsList) {
+            total += points.getPoints();
+        }
+        return total;
+    }
+    private void displayReward(float totalPoints , Points points) {
+        if (totalPoints < 5.0) {
+            addPoints(points);
+        } else {
+            new MaterialAlertDialogBuilder(binding.getRoot().getContext())
+                    .setTitle("Reward limit")
+                    .setMessage("You reach the reward limit for today comeback again tomorrow!")
+                    .setPositiveButton("Close", (dialog, which) -> {
+                        dialog.dismiss();
+                    }).show();
+        }
+    }
     private void addPoints(Points points) {
         firestore.collection(User.TABLE_NAME)
                 .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -346,4 +387,24 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
                     }
                 });
     }
+    public static long startOfDay(long time) {
+        Calendar cal = Calendar.getInstance();
+        Date date = new Date(time);
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, 0); //set hours to zero
+        cal.set(Calendar.MINUTE, 0); // set minutes to zero
+        cal.set(Calendar.SECOND, 1); //set seconds to zero
+        return cal.getTimeInMillis();
+    }
+    public static long endOfDay(long time) {
+        Calendar cal = Calendar.getInstance();
+        Date date = new Date(time);
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, 23); //set hours to zero
+        cal.set(Calendar.MINUTE, 59); // set minutes to zero
+        cal.set(Calendar.SECOND, 59); //set seconds to zero
+        return cal.getTimeInMillis();
+    }
+
+
 }
