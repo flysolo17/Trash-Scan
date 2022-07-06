@@ -110,6 +110,8 @@ public class ChatsFragment extends Fragment implements ChatsAdapter.OnChatClick 
                         }
                         if (userList.size() == 0) {
                             binding.textNoMessages.setVisibility(View.VISIBLE);
+                        } else {
+                            binding.textNoMessages.setVisibility(View.GONE);
                         }
                     }
                 }

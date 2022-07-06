@@ -1,6 +1,7 @@
 package com.example.trash_scan.firebase.models;
 
 public class Points {
+    public static final String TABLE_NAME = "Points";
     String pointInfo;
     float points;
     Long timestamp;

@@ -103,7 +103,7 @@ public class HomeFragment extends Fragment {
         List<Points> pointsList = new ArrayList<>();
         firestore.collection(User.TABLE_NAME)
                 .document(id)
-                .collection("Points")
+                .collection(Points.TABLE_NAME)
                 .addSnapshotListener((value, error) -> {
                     if (error != null) {
                         error.printStackTrace();
