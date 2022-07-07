@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,7 +44,12 @@ public class Violation extends Fragment implements ViolationAdapter.ViolationAda
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.listViolation.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        //yan mamili ka nalang
+        binding.listViolation.setLayoutManager(new GridLayoutManager(view.getContext(),2));
+/*
+        binding.listViolation.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));*/
+
+
         // Construct the data source
         arrayOfViolations= new ArrayList<>();
 

@@ -175,10 +175,7 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
 
         });
         binding.textGotoMarkerPlace.setOnClickListener(v -> {
-            MarketPlaceFragment marketPlaceFragment = new MarketPlaceFragment();
-            if (!marketPlaceFragment.isAdded()) {
-                marketPlaceFragment.show(getChildFragmentManager(),"MarketPlace");
-            }
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_trashActivity_to_marketPlaceFragment2);
         });
     }
 
@@ -322,11 +319,8 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
 
     @Override
     public void onViewWasteInfo(int position) {
-        ViewWaste viewWaste = new ViewWaste();
-        if (!viewWaste.isAdded()) {
-            recycableViewModel.setRecycables(recycablesList.get(position));
-            viewWaste.show(getChildFragmentManager(),"View Waste Info");
-        }
+        recycableViewModel.setRecycables(recycablesList.get(position));
+        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_trashActivity_to_viewWaste);
     }
     private void showCongratsDialog(float points) {
         View view = LayoutInflater.from(binding.getRoot().getContext()).inflate(R.layout.view_congrats,binding.getRoot(),false);

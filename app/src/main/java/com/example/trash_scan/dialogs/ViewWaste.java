@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ViewWaste extends DialogFragment implements JunkShopsWasteAdapter.OnWasteClick {
+public class ViewWaste extends Fragment implements JunkShopsWasteAdapter.OnWasteClick {
 
     private FragmentViewWasteBinding binding;
 
@@ -57,12 +57,6 @@ public class ViewWaste extends DialogFragment implements JunkShopsWasteAdapter.O
         firestore = FirebaseFirestore.getInstance();
         recyclablesList = new ArrayList<>();
         binding.recyclerviewWaste.setLayoutManager(new GridLayoutManager(binding.getRoot().getContext(),2,GridLayoutManager.VERTICAL,false));
-    }
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Material_Light_NoActionBar_Fullscreen);
-
     }
 
     @Override
@@ -90,10 +84,9 @@ public class ViewWaste extends DialogFragment implements JunkShopsWasteAdapter.O
             }
         });
         getJunkshopRecyclables();
-        binding.buttonBack.setOnClickListener(v -> dismiss());
+
         binding.buttonMessageOwner.setOnClickListener(v -> {
-         /*   NavController navController = Navigation.findNavController(getParentFragment().requireView());
-            navController.navigate(R.id.action_viewWaste2_to_messagingFragment);*/
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_viewWaste_to_messagingFragment);
         });
     }
     private void getRecyclableOwner(String id) {
@@ -142,10 +135,7 @@ public class ViewWaste extends DialogFragment implements JunkShopsWasteAdapter.O
 
     @Override
     public void onViewWasteInfo(int position) {
-        ViewWaste viewWaste = new ViewWaste();
-        if (!viewWaste.isAdded()) {
-            recycableViewModel.setRecycables(recyclablesList.get(position));
-            viewWaste.show(getChildFragmentManager(),"View Waste Info");
-        }
+        recycableViewModel.setRecycables(recyclablesList.get(position));
+        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_viewWaste_self);
     }
 }

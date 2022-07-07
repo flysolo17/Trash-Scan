@@ -97,7 +97,7 @@
     <fragment
         android:id="@+id/violation"
         android:name="com.example.trash_scan.appfeatures.Violation"
-        android:label="activity_violation"
+        android:label="Violation"
         tools:layout="@layout/activity_violation" />
     <fragment
         android:id="@+id/tips"
@@ -112,20 +112,39 @@
         <action
             android:id="@+id/action_trashActivity_to_messagingFragment"
             app:destination="@id/messagingFragment" />
+        <action
+            android:id="@+id/action_trashActivity_to_viewWaste"
+            app:destination="@id/viewWaste" />
+        <action
+            android:id="@+id/action_trashActivity_to_marketPlaceFragment2"
+            app:destination="@id/marketPlaceFragment2" />
     </fragment>
     <fragment
         android:id="@+id/nav_about"
         android:name="com.example.trash_scan.about.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
-    <dialog
-        android:id="@+id/viewWaste2"
+    <fragment
+        android:id="@+id/viewWaste"
         android:name="com.example.trash_scan.dialogs.ViewWaste"
-        android:label="fragment_view_waste"
+        android:label="View Waste"
         tools:layout="@layout/fragment_view_waste" >
         <action
-            android:id="@+id/action_viewWaste2_to_messagingFragment"
+            android:id="@+id/action_viewWaste_to_messagingFragment"
             app:destination="@id/messagingFragment" />
-    </dialog>
+        <action
+            android:id="@+id/action_viewWaste_self"
+            app:destination="@id/viewWaste" />
+    </fragment>
+    <fragment
+        android:id="@+id/marketPlaceFragment2"
+        android:name="com.example.trash_scan.fragments.MarketPlaceFragment"
+        android:label="Market Place"
+        tools:layout="@layout/fragment_market_place" >
+        <action
+            android:id="@+id/action_marketPlaceFragment2_to_viewWaste"
+            app:destination="@id/viewWaste" />
+    </fragment>
+
 
 </navigation>

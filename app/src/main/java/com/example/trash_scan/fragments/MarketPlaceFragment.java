@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.util.Log;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MarketPlaceFragment extends DialogFragment implements JunkShopsWasteAdapter.OnWasteClick {
+public class MarketPlaceFragment extends Fragment implements JunkShopsWasteAdapter.OnWasteClick {
 
     private FragmentMarketPlaceBinding binding;
     private RecycableViewModel recycableViewModel;
@@ -40,11 +41,7 @@ public class MarketPlaceFragment extends DialogFragment implements JunkShopsWast
         recyclablesList = new ArrayList<>();
         binding.recyclerviewWaste.setLayoutManager(new GridLayoutManager(binding.getRoot().getContext(),2,GridLayoutManager.VERTICAL,false));
     }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Material_Light_NoActionBar_Fullscreen);
-    }
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -60,7 +57,6 @@ public class MarketPlaceFragment extends DialogFragment implements JunkShopsWast
         init();
         recycableViewModel = new ViewModelProvider(requireActivity()).get(RecycableViewModel.class);
         getJunkshopRecyclables();
-        binding.buttonBack.setOnClickListener(v -> dismiss());
     }
     private void getJunkshopRecyclables(){
         recyclablesList.clear();
@@ -83,10 +79,7 @@ public class MarketPlaceFragment extends DialogFragment implements JunkShopsWast
     }
     @Override
     public void onViewWasteInfo(int position) {
-        ViewWaste viewWaste = new ViewWaste();
-        if (!viewWaste.isAdded()) {
-            recycableViewModel.setRecycables(recyclablesList.get(position));
-            viewWaste.show(getChildFragmentManager(),"View Waste Info");
-        }
+        recycableViewModel.setRecycables(recyclablesList.get(position));
+        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_marketPlaceFragment2_to_viewWaste);
     }
 }
