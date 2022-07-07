@@ -87,6 +87,7 @@ public class MessagingFragment extends Fragment {
 
         });
         binding.buttonVisitProfile.setOnClickListener(v-> {
+
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_messagingFragment_to_viewJunkShopProfile);
         });
     }

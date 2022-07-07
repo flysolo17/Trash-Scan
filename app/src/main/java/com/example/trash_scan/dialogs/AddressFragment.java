@@ -37,10 +37,6 @@ public class AddressFragment extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        addressViewModel = new ViewModelProvider(requireActivity()).get(AddressViewModel.class);
-        addressViewModel.getAddress().observe(getViewLifecycleOwner(), address -> {
-            this.address = address;
-        });
         binding = FragmentAddressBinding.inflate(inflater,container,false);
         return binding.getRoot();
     }

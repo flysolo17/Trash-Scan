@@ -8,6 +8,10 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.Navigator;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -18,11 +22,15 @@ import android.view.ViewGroup;
 
 import com.example.trash_scan.R;
 import com.example.trash_scan.adapter.JunkShopsWasteAdapter;
+import com.example.trash_scan.databinding.ActivityTrashBinding;
 import com.example.trash_scan.databinding.FragmentViewWasteBinding;
 import com.example.trash_scan.firebase.models.Recycables;
 import com.example.trash_scan.firebase.models.User;
+import com.example.trash_scan.messaging.MessagingFragment;
 import com.example.trash_scan.viewmodels.RecycableViewModel;
+import com.example.trash_scan.viewmodels.UserViewModel;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -41,8 +49,11 @@ public class ViewWaste extends DialogFragment implements JunkShopsWasteAdapter.O
     private FirebaseFirestore firestore;
     private List<Recycables> recyclablesList;
     private JunkShopsWasteAdapter adapter;
+    private UserViewModel userViewModel;
+    private User user;
 
     private void init() {
+        userViewModel = new ViewModelProvider(requireActivity()).get(UserViewModel.class);
         firestore = FirebaseFirestore.getInstance();
         recyclablesList = new ArrayList<>();
         binding.recyclerviewWaste.setLayoutManager(new GridLayoutManager(binding.getRoot().getContext(),2,GridLayoutManager.VERTICAL,false));
@@ -80,6 +91,10 @@ public class ViewWaste extends DialogFragment implements JunkShopsWasteAdapter.O
         });
         getJunkshopRecyclables();
         binding.buttonBack.setOnClickListener(v -> dismiss());
+        binding.buttonMessageOwner.setOnClickListener(v -> {
+         /*   NavController navController = Navigation.findNavController(getParentFragment().requireView());
+            navController.navigate(R.id.action_viewWaste2_to_messagingFragment);*/
+        });
     }
     private void getRecyclableOwner(String id) {
         firestore.collection(User.TABLE_NAME)
@@ -89,6 +104,7 @@ public class ViewWaste extends DialogFragment implements JunkShopsWasteAdapter.O
                         User user = documentSnapshot.toObject(User.class);
                         if (user != null) {
                             bindUserInfo(user);
+                            userViewModel.setUser(user);
                         }
                     }
                 });

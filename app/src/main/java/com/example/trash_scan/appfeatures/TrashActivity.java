@@ -407,4 +407,5 @@ public class TrashActivity extends Fragment implements JunkshopOwnerAdapter.OnJu
     }
 
 
+
 }
