@@ -2,28 +2,19 @@ package com.example.trash_scan.appfeatures;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ListView;
 
-import com.example.trash_scan.MainActivity;
 import com.example.trash_scan.R;
 import com.example.trash_scan.databinding.ActivityViolationBinding;
-import com.example.trash_scan.databinding.FragmentViolationBinding;
-import com.example.trash_scan.fragments.HomeFragment;
 import com.example.trash_scan.violation.ViolationAdapter;
-import com.example.trash_scan.violation.ViolationBodyActivity;
+import com.example.trash_scan.violation.ViolationContentFragment;
 import com.example.trash_scan.violation.ViolationsAct;
 
 import java.util.ArrayList;
@@ -95,9 +86,9 @@ public class Violation extends Fragment implements ViolationAdapter.ViolationAda
 
     @Override
     public void onContainerClick(int postion) {
-        Intent intent=new Intent(requireContext(), ViolationBodyActivity.class);
-        intent.putExtra("title" ,arrayOfViolations.get(postion).getTitle());
-        intent.putExtra("body",arrayOfViolations.get(postion).getBody());
-        startActivity(intent);
+        ViolationContentFragment fragment = ViolationContentFragment.newInstance(postion,arrayOfViolations.get(postion).getTitle());
+        if (!fragment.isAdded()) {
+            fragment.show(getChildFragmentManager(),"Violation");
+        }
     }
 }
