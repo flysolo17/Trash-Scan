@@ -28,9 +28,6 @@
         <activity
             android:name=".garbage_collector"
             android:exported="false" />
-        <activity
-            android:name=".violation.ViolationBodyActivity" />
-
 
         <activity
             android:name=".registration.Login"

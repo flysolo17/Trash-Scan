@@ -31,6 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -71,7 +72,7 @@ public class JunkShopMessages extends Fragment implements ChatsAdapter.OnChatCli
     }
     private void getUserIDs(FirebaseUser currentUser) {
         userIDList = new ArrayList<>();
-        firestore.collection("Messages").addSnapshotListener((value, error) -> {
+        firestore.collection("Messages").orderBy("timestamp", Query.Direction.DESCENDING).addSnapshotListener((value, error) -> {
             userIDList.clear();
             if (error != null) {
                 Log.d(".ChatsFragment",error.getMessage());
@@ -91,7 +92,6 @@ public class JunkShopMessages extends Fragment implements ChatsAdapter.OnChatCli
                 getUserChats();
             }
         });
-
     }
     @SuppressLint("NotifyDataSetChanged")
     private void getUserChats() {
@@ -114,6 +114,8 @@ public class JunkShopMessages extends Fragment implements ChatsAdapter.OnChatCli
                     }
                     if (userList.size() == 0 ){
                         binding.textNoMessages.setVisibility(View.VISIBLE);
+                    } else {
+                        binding.textNoMessages.setVisibility(View.GONE);
                     }
                 }
             }
